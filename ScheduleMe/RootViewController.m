@@ -74,15 +74,11 @@
 -(void)updateUINavItemTitle
 {
     
-    NSString* welcomeString = nil;
+    NSString* welcomeString = @"";
     
     if ([PFUser currentUser].isAuthenticated)
     {
         welcomeString = [NSString stringWithFormat:@"Welcome %@",[PFUser currentUser].username];
-    }
-    else
-    {
-        welcomeString = @"";
     }
     
     [[self navigationItem] setTitle:welcomeString];
