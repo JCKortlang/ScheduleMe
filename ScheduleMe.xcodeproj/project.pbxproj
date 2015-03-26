@@ -25,6 +25,7 @@
 		1A6809CB1AC4D1AF00ABF9F2 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6809C51AC4D1AE00ABF9F2 /* ParseFacebookUtils.framework */; };
 		1A6809CC1AC4D1AF00ABF9F2 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6809C61AC4D1AE00ABF9F2 /* ParseFacebookUtilsV4.framework */; };
 		1A6809CD1AC4D1AF00ABF9F2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6809C71AC4D1AE00ABF9F2 /* ParseUI.framework */; };
+		1A6809D01AC4D29400ABF9F2 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6809CF1AC4D29400ABF9F2 /* CalendarViewController.m */; };
 		6C97E5021AC48FF300454832 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97E5011AC48FF300454832 /* AudioToolbox.framework */; };
 		6C97E5041AC48FFC00454832 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97E5031AC48FFC00454832 /* CFNetwork.framework */; };
 		6C97E5061AC4900900454832 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97E5051AC4900900454832 /* CoreGraphics.framework */; };
@@ -82,6 +83,8 @@
 		1A6809C51AC4D1AE00ABF9F2 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = ParseFramework/ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		1A6809C61AC4D1AE00ABF9F2 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = ParseFramework/ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		1A6809C71AC4D1AE00ABF9F2 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = ParseFramework/ParseUI.framework; sourceTree = "<group>"; };
+		1A6809CE1AC4D29400ABF9F2 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		1A6809CF1AC4D29400ABF9F2 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		6C97E5011AC48FF300454832 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		6C97E5031AC48FFC00454832 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6C97E5051AC4900900454832 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,6 +193,8 @@
 				1A4001CA1AC339C500B64BA2 /* AppDelegate.m */,
 				1A4001CC1AC339C500B64BA2 /* RootViewController.h */,
 				1A4001CD1AC339C500B64BA2 /* RootViewController.m */,
+				1A6809CE1AC4D29400ABF9F2 /* CalendarViewController.h */,
+				1A6809CF1AC4D29400ABF9F2 /* CalendarViewController.m */,
 				1A4001CF1AC339C500B64BA2 /* Main.storyboard */,
 				1A4001D21AC339C500B64BA2 /* Images.xcassets */,
 				1A4001D41AC339C500B64BA2 /* LaunchScreen.xib */,
@@ -347,6 +352,7 @@
 				1A4001CB1AC339C500B64BA2 /* AppDelegate.m in Sources */,
 				1A6809C11AC4D0FB00ABF9F2 /* TSQCalendarView.m in Sources */,
 				1A6809BE1AC4D0FB00ABF9F2 /* TSQCalendarCell.m in Sources */,
+				1A6809D01AC4D29400ABF9F2 /* CalendarViewController.m in Sources */,
 				1A6809C01AC4D0FB00ABF9F2 /* TSQCalendarRowCell.m in Sources */,
 				1A4001C81AC339C500B64BA2 /* main.m in Sources */,
 				1A6809BF1AC4D0FB00ABF9F2 /* TSQCalendarMonthHeaderCell.m in Sources */,
