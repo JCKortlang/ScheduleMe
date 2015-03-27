@@ -29,6 +29,7 @@
                         <viewControllerLayoutGuide type="bottom" id="IP2-fX-hay"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QI0-kw-dBz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2c-8a-TIw">
@@ -65,12 +66,13 @@
         <!--View Controller-->
         <scene sceneID="08b-iW-xcu">
             <objects>
-                <viewController id="S3Q-7z-Wag" sceneMemberID="viewController">
+                <viewController id="S3Q-7z-Wag" customClass="TSQTAViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aE4-n3-2Tb"/>
                         <viewControllerLayoutGuide type="bottom" id="u1G-2v-dAJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DhF-ot-gQd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

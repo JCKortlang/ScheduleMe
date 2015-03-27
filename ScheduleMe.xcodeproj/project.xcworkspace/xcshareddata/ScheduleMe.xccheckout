@@ -12,6 +12,8 @@
 	<dict>
 		<key>3C23480C732BDB2EAC5FA82BBE62D676CD90BB67</key>
 		<string>https://github.com/JCKortlang/ScheduleMe.git</string>
+		<key>F6AB3C480DCBFA8395AD6B7D303CA49A1B4F7ACF</key>
+		<string>https://github.com/square/objc-TimesSquare.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>ScheduleMe.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>3C23480C732BDB2EAC5FA82BBE62D676CD90BB67</key>
 		<string>../..</string>
+		<key>F6AB3C480DCBFA8395AD6B7D303CA49A1B4F7ACF</key>
+		<string>../../TimesSquare/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/JCKortlang/ScheduleMe.git</string>
@@ -35,6 +39,14 @@
 			<string>3C23480C732BDB2EAC5FA82BBE62D676CD90BB67</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ScheduleMe</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F6AB3C480DCBFA8395AD6B7D303CA49A1B4F7ACF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TimesSquare</string>
 		</dict>
 	</array>
 </dict>
