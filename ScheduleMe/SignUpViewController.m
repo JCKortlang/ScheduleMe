@@ -28,9 +28,9 @@
     User.username = self.UserNameField.text;
     User.password = self.PasswordField.text;
     User.email = self.EmailField.text;
-    NSString *firstname;
-    NSString *lastname;
-    NSString *organization;
+    NSString *firstname = @"firstname";
+    NSString *lastname = @"lastname";
+    NSString *organization = @"organization";
     
     [User setValue: self.FirstNameField.text forKey: firstname];
     [User setValue: self.LastNameField.text forKey: lastname];

@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *LogInPasswordField;
 @property (weak, nonatomic) IBOutlet UIButton *LogInButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *SignUpVCSegueButton;
 @property (weak, nonatomic) id <loginProtocol> delegate;
 
 @end
