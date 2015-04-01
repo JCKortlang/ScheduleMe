@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "RootViewController.h"
+#import "SignUpViewController.h"
+#import "LogInViewController.h"
 
 @import ParseUI;
 
-@interface RootViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface RootViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, loginProtocol, signUpProtocol >
 
 @end
 

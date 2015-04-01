@@ -29,6 +29,33 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    //TEST TO MAKE A NEW USER
+//    PFUser *User = [PFUser user];
+//    User.username = @"";
+//    User.password = @"sandwich";
+//    //User setValue:  forKey:
+//    
+//    //this is what you call for sending the object to parse.
+//    [User signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (error) {
+//            // Display an alert view to show the error message
+//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[error userInfo][@"error"]
+//                                                                message:nil
+//                                                               delegate:self
+//                                                      cancelButtonTitle:nil
+//                                                      otherButtonTitles:@"OK", nil];
+//            [alertView show];
+//            // Bring the keyboard back up, because they probably need to change something.
+//            //[self.usernameField becomeFirstResponder];
+//            return;
+//        }
+//        
+//        // Handle the success path
+//        NSLog(@"success");
+//    }];
+    
+    
+    
     return YES;
 }
 

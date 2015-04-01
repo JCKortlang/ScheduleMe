@@ -7,6 +7,8 @@
 //
 
 #import "RootViewController.h"
+#import "SignUpViewController.h"
+#import "LogInViewController.h"
 #import <Parse/Parse.h>
 
 @interface RootViewController ()
@@ -40,13 +42,20 @@
 
 -(void)showLoginViewController
 {
-    PFLogInViewController *loginViewController = [[PFLogInViewController alloc] init];
+    //do nothing if we have a user
+    if([PFUser currentUser]) return;
+    
+    
+//    LogInViewController *loginViewController = [[LogInViewController alloc] init];
+    LogInViewController *loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LogInViewController"];
+    //figure out the delegate stuff
     [loginViewController setDelegate:self];
     
-    PFSignUpViewController* signupViewController = [[PFSignUpViewController alloc] init];
+    SignUpViewController* signupViewController = [[SignUpViewController alloc] init];
+    //to define what fields we have to enter when we signup for a new account
     [signupViewController setDelegate:self];
     
-    [loginViewController setSignUpController:signupViewController];
+    //[loginViewController setSignUpController:signupViewController];
     
     [self presentViewController:loginViewController animated:YES completion:nil];
 }
@@ -102,25 +111,25 @@
 }
 
 // Sent to the delegate when a PFUser is logged in.
-- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
+- (void)logInViewController:(LogInViewController *)logInController didLogInUser:(PFUser *)user
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 // Sent to the delegate when the log in attempt fails.
-- (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error
+- (void)logInViewController:(LogInViewController *)logInController didFailToLogInWithError:(NSError *)error
 {
     NSLog(@"Failed to log in...");
 }
 
 // Sent to the delegate when the log in screen is dismissed.
-- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController
+- (void)logInViewControllerDidCancelLogIn:(LogInViewController *)logInController
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 // Sent to the delegate to determine whether the sign up request should be submitted to the server.
-- (BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info
+- (BOOL)signUpViewController:(SignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info
 {
     BOOL informationComplete = YES;
     
@@ -146,17 +155,17 @@
 }
 
 // Sent to the delegate when a PFUser is signed up.
-- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+- (void)signUpViewController:(SignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
     [self dismissModalViewControllerAnimated:YES]; // Dismiss the PFSignUpViewController
 }
 
 // Sent to the delegate when the sign up attempt fails.
-- (void)signUpViewController:(PFSignUpViewController *)signUpController didFailToSignUpWithError:(NSError *)error {
+- (void)signUpViewController:(SignUpViewController *)signUpController didFailToSignUpWithError:(NSError *)error {
     NSLog(@"Failed to sign up...");
 }
 
 // Sent to the delegate when the sign up screen is dismissed.
-- (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController {
+- (void)signUpViewControllerDidCancelSignUp:(SignUpViewController *)signUpController {
     NSLog(@"User dismissed the signUpViewController");
 }
 
