@@ -19,6 +19,8 @@
 - (void)viewDidAppear:(BOOL)animated{
     
 }
+
+
 - (IBAction)UserCreationConfirmed:(id)sender {
     
     [self.delegate SignUpDelegateMethod:self];
@@ -53,8 +55,13 @@
         
         // Handle the success path
         NSLog(@"success");
+        [self dismissViewControllerAnimated:YES completion:NULL];
     }];
+    
 }
 
+- (IBAction)UserCreationCancelled:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 
 @end
