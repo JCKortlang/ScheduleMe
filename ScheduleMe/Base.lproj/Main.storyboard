@@ -154,10 +154,33 @@
                                     <segue destination="5m3-OJ-kb2" kind="show" id="W8j-0t-6Kg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8L-Is-ONh">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Nevermind, just log in ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="68" y="383" width="264" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="5m3-OJ-kb2" kind="show" id="2iO-PZ-mmW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="t8L-Is-ONh"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="t8L-Is-ONh"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="BackToLogIn" destination="t8L-Is-ONh" id="Hl4-at-MfP"/>
                         <outlet property="CompanyField" destination="0xO-Hh-43t" id="BXd-vq-C03"/>
                         <outlet property="ConfirmSignupButton" destination="2Pg-pO-I9X" id="Vhj-Su-aYp"/>
                         <outlet property="EmailField" destination="4hN-43-NJm" id="aDz-Vz-8nc"/>
@@ -294,4 +317,7 @@
             <point key="canvasLocation" x="1332" y="409"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="W8j-0t-6Kg"/>
+    </inferredMetricsTieBreakers>
 </document>
