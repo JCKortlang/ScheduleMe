@@ -99,9 +99,18 @@
  */
 - (void)calendarView:(TSQCalendarView *)calendarView didSelectDate:(NSDate *)date
 {
-    [[AppointmentManager getInstance] getAppointmentsForDate:date];
     self.selectedDate = date;
-    [self performSegueWithIdentifier:@"AppointmentSegue" sender:self];
+    [[AppointmentManager getInstance] getAppointmentsForDate:date WithCallback:^(BOOL SUCCESS) {
+        if(SUCCESS)
+        {
+            [self performSegueWithIdentifier:@"AppointmentSegue" sender:self];
+        }
+        else
+        {
+            //Cry?
+        }
+    }];
+    
 }
 
 #pragma mark - Navigation

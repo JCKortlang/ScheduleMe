@@ -31,7 +31,7 @@
     
     //Set the NavItem title to the date.
     NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
-    formatter.timeStyle = NSDateFormatterFullStyle;
+    formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterFullStyle;
     self.navigationItem.title = [formatter stringFromDate:self.selectedDate];
     
@@ -42,33 +42,43 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 -(IBAction)reserveButtonClicked:(id)sender
 {
-    [[AppointmentManager getInstance] scheduleAppointmentOn:self.selectedDate ForTimeslot:self.selectedIndex];
-    // Force the table view to redraw itself.
+    [[AppointmentManager getInstance] scheduleAppointmentOn:self.selectedDate ForTimeslot:self.selectedIndex WithCallback:^(bool success) {
+        if(success)
+        {
+            // Force the table view to redraw itself.
+            NSMutableArray* array = [[NSMutableArray alloc]init];
+            [array addObject:self.selectedIndex];
+            
+            //Inefficient.
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    // Return the number of sections.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     
     // Return the number of rows in the section.
     return 8;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     NSString* MyIdentifier = APPOINTMENT_CELL_IDENTIFIER;
     
     AppointmentTableViewCell *cell = (AppointmentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:MyIdentifier forIndexPath:indexPath];
@@ -80,10 +90,17 @@
         cell = [nib objectAtIndex:0];
     }
     
+    NSNumber* index = [[NSNumber alloc] initWithInteger:indexPath.row];
     
-    cell.timeSlot = [[NSNumber alloc]initWithInteger:indexPath.row];
+    cell.delegate = self;
+    cell.timeSlot = index;
     cell.isAvailable = [[AppointmentManager getInstance] checkTimeslotAvailability:cell.timeSlot];
-    cell.availableMessage.text = cell.isAvailable ? @"Available" : @"Reserved";
+    
+    if (!cell.isAvailable)
+    {
+        cell.availableMessage.text = @"Reserved";
+        cell.availableMessage.textColor = [[UIColor alloc] initWithRed:255 green:0 blue:0 alpha:1];
+    }
     
     //Hacky but sufficient for a prototype.
     long time = self.firtAppointmentTime + indexPath.row;

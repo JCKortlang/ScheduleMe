@@ -15,9 +15,8 @@
 @property NSArray* currentUsersAppointments;
 
 +(AppointmentManager*) getInstance;
--(void)scheduleAppointmentOn:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot;
--(void)getAppointmentsForDate:(NSDate*)aDate;
--(void)getAppointmentsForCurrentUser;
+-(void)scheduleAppointmentOn:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot WithCallback:(void(^)(bool success))callback;
+-(void)getAppointmentsForDate:(NSDate*)aDate WithCallback:(void(^)(BOOL SUCCESS))callback;
 -(bool)checkTimeslotAvailability:(NSNumber*) aTimeslot;
 
 @end

@@ -37,27 +37,6 @@ static AppointmentManager* instance;
     return instance;
 }
 
--(void)scheduleAppointmentOn:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot
-{
-    if (aDate != nil && aTimeslot != nil)
-    {
-        Appointment* theAppointment = [Appointment object];
-        theAppointment.forTimeslot = aTimeslot;
-        theAppointment.onDate = aDate;
-        theAppointment.scheduledBy = [PFUser currentUser];
-        
-        [theAppointment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-           if(succeeded)
-           {
-               [self getAppointmentsForCurrentUser];
-           }
-           else if (error != nil)
-           {
-               NSLog([error description]);
-           }
-        }];
-    }
-}
 
 -(void)scheduleAppointmentOn:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot WithCallback:(void(^)(bool success))callback
 {
@@ -71,8 +50,9 @@ static AppointmentManager* instance;
         [theAppointment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if(succeeded)
             {
-                [self getAppointmentsForCurrentUser];
-                callback(YES);
+                [self getAppointmentsForDate:aDate WithCallback:^(BOOL SUCCESS) {
+                    callback(SUCCESS);
+                }];
             }
             else if (error != nil)
             {
@@ -83,8 +63,7 @@ static AppointmentManager* instance;
     }
 }
 
-
--(void) getAppointmentsForDate:(NSDate*) aDate
+-(void)getAppointmentsForDate:(NSDate*)aDate WithCallback:(void(^)(BOOL SUCCESS))callback
 {
     if(aDate != nil)
     {
@@ -96,10 +75,12 @@ static AppointmentManager* instance;
             if(error == nil)
             {
                 self.appointments = objects;
+                callback(YES);
             }
             else
             {
                 NSLog(error.description);
+                callback(NO);
             }
         }];
     }
