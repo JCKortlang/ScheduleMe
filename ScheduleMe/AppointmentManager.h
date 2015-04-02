@@ -12,10 +12,12 @@
 @interface AppointmentManager : NSObject
 
 @property NSArray* appointments;
+@property NSArray* currentUsersAppointments;
 
 +(AppointmentManager*) getInstance;
 -(void)scheduleAppointmentOn:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot;
--(NSArray*)getAppointmentsForDate:(NSDate*)aDate;
+-(void)getAppointmentsForDate:(NSDate*)aDate;
 -(void)getAppointmentsForCurrentUser;
+-(bool)checkTimeslotAvailability:(NSNumber*) aTimeslot;
 
 @end

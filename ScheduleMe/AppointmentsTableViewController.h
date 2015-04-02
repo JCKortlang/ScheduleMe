@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppointmentTableViewCell.h"
 
-@interface AppointmentsTableViewController : UITableViewController
+@interface AppointmentsTableViewController : UITableViewController <AppointmentReservation>
 
 @property NSDate* selectedDate;
 @property NSArray* appointments;

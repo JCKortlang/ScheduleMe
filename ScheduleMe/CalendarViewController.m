@@ -99,7 +99,7 @@
  */
 - (void)calendarView:(TSQCalendarView *)calendarView didSelectDate:(NSDate *)date
 {
-    [[AppointmentManager getInstance] getAppointmentsForCurrentUser];
+    [[AppointmentManager getInstance] getAppointmentsForDate:date];
     self.selectedDate = date;
     [self performSegueWithIdentifier:@"AppointmentSegue" sender:self];
 }

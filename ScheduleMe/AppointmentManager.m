@@ -9,6 +9,10 @@
 #import "AppointmentManager.h"
 #import <Parse/Parse.h>
 
+@interface AppointmentManager()
+
+@end
+
 @implementation AppointmentManager
 
 static AppointmentManager* instance;
@@ -55,10 +59,8 @@ static AppointmentManager* instance;
     }
 }
 
--(NSArray*) getAppointmentsForDate:(NSDate*) aDate
+-(void) getAppointmentsForDate:(NSDate*) aDate
 {
-    __block NSArray* results = nil;
-    
     if(aDate != nil)
     {
         PFQuery* query = [PFQuery queryWithClassName:APPOINTMENT_CLASSNAME];
@@ -68,26 +70,46 @@ static AppointmentManager* instance;
             
             if(error == nil)
             {
-                results = objects;
+                self.appointments = objects;
+            }
+            else
+            {
+                NSLog(error.description);
             }
         }];
     }
-    
-    return results;
 }
 
 -(void) getAppointmentsForCurrentUser
 {
     PFQuery* query = [PFQuery queryWithClassName:APPOINTMENT_CLASSNAME];
-    [query whereKey:@"scheduledBy" equalTo:[PFUser currentUser]];
+    [query whereKey:@"scheduledBy" equalTo:[PFUser objectWithoutDataWithObjectId:[PFUser currentUser].objectId]];
+    [query orderByAscending:@"forTimeslot"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
         if(error == nil)
         {
-            self.appointments = objects;
+            self.currentUsersAppointments = objects;
+        }
+        else
+        {
+            NSLog(error.description);
         }
     }];
+}
+
+-(bool) checkTimeslotAvailability:(NSNumber*) aTimeslot
+{
+    bool result = true;
+    
+    for(int i = 0; i < self.appointments.count && result; i++)
+    {
+        Appointment* item = (Appointment*)[self.appointments objectAtIndex:i];
+        result = ![item.forTimeslot isEqualToNumber:aTimeslot];
+    }
+    
+    return result;
 }
 
 
