@@ -9,6 +9,9 @@
 #import "RootViewController.h"
 #import "SignUpViewController.h"
 #import "LogInViewController.h"
+#import "AppointmentManager.h"
+#import "AppointmentTableViewCell.h"
+#import "AppointmentsTableViewController.h"
 #import <Parse/Parse.h>
 
 @interface RootViewController ()
@@ -20,7 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     UIBarButtonItem* logoutButton = [[UIBarButtonItem alloc]init];
     logoutButton.title = @"Logout";
     [logoutButton setTarget:self];
@@ -29,6 +31,32 @@
     [[self navigationItem] setRightBarButtonItem:logoutButton];
     
     [self updateUINavItemTitle];
+    
+    [self getAppointmentsForCurrentUser];
+    [self populateAppointmentTableView];
+}
+
+-(void) getAppointmentsForCurrentUser
+{
+    PFQuery* query = [PFQuery queryWithClassName:@"Appointment"];
+    [query whereKey:@"scheduledBy" equalTo:[PFUser currentUser]];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        if(error == nil)
+        {
+            //copy read objects into global Array 
+            
+        }
+    }];
+}
+
+//this function will populate the appointment view on the first screen
+-(void) populateAppointmentTableView{
+    //call the method to get all the info from parse
+    [self getAppointmentsForCurrentUser];
+    //push that data into the tableview
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
