@@ -55,7 +55,7 @@ static AppointmentManager* instance;
     }
 }
 
--(NSArray*) getappointmentsForDate:(NSDate*) aDate
+-(NSArray*) getAppointmentsForDate:(NSDate*) aDate
 {
     __block NSArray* results = nil;
     

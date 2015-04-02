@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UINib *cellNib = [UINib nibWithNibName:APPOINTMENT_CELL_IDENTIFIER bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:APPOINTMENT_CELL_IDENTIFIER];
+    
     self.appointments = [AppointmentManager getInstance].appointments;
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
@@ -48,20 +51,32 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     // Return the number of rows in the section.
-    return self.appointments == nil ? 0:self.appointments.count;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
     
-    UITableViewCell *cell = [[UITableViewCell alloc]init];
-    cell.textLabel.text = [NSString stringWithFormat:@"Foo %@", indexPath];
+    NSString* MyIdentifier = APPOINTMENT_CELL_IDENTIFIER;
     
-    // Configure the cell...
+    AppointmentTableViewCell *cell = (AppointmentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:MyIdentifier forIndexPath:indexPath];
     
+    if(cell == nil)
+    {
+        //We create the style.
+        NSArray* nib = [[NSBundle mainBundle] loadNibNamed:MyIdentifier owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.availableMessage.text = @"Foo";
     return cell;
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
