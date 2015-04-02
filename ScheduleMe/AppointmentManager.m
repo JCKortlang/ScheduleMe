@@ -59,6 +59,31 @@ static AppointmentManager* instance;
     }
 }
 
+-(void)scheduleAppointmentOn:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot WithCallback:(void(^)(bool success))callback
+{
+    if (aDate != nil && aTimeslot != nil)
+    {
+        Appointment* theAppointment = [Appointment object];
+        theAppointment.forTimeslot = aTimeslot;
+        theAppointment.onDate = aDate;
+        theAppointment.scheduledBy = [PFUser currentUser];
+        
+        [theAppointment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if(succeeded)
+            {
+                [self getAppointmentsForCurrentUser];
+                callback(YES);
+            }
+            else if (error != nil)
+            {
+                NSLog([error description]);
+                callback(NO);
+            }
+        }];
+    }
+}
+
+
 -(void) getAppointmentsForDate:(NSDate*) aDate
 {
     if(aDate != nil)

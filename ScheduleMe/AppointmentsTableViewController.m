@@ -50,6 +50,7 @@
 -(IBAction)reserveButtonClicked:(id)sender
 {
     [[AppointmentManager getInstance] scheduleAppointmentOn:self.selectedDate ForTimeslot:self.selectedIndex];
+    // Force the table view to redraw itself.
 }
 
 #pragma mark - Table view data source
