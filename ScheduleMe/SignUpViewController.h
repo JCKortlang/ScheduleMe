@@ -24,7 +24,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *LastNameField;
 @property (weak, nonatomic) IBOutlet UITextField *CompanyField;
 @property (weak, nonatomic) IBOutlet UIButton *ConfirmSignupButton;
-@property (weak, nonatomic) IBOutlet UIButton *BackToLogIn;
+@property (weak, nonatomic) IBOutlet UIButton *BackToLogInButton;
+
 
 
 @property (weak, nonatomic) id<signUpProtocol> delegate;

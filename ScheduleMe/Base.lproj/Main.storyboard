@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9dZ-QG-5ZH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9dZ-QG-5ZH">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -84,14 +84,6 @@
                                     <rect key="frame" x="112" y="28" width="176" height="21"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cr7-I2-0bz">
-                                <rect key="frame" x="252" y="66" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="152" y="66" width="97" height="30"/>
-                                </variation>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZIK-po-IkP">
                                 <rect key="frame" x="252" y="122" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -151,36 +143,33 @@
                                 </variation>
                                 <connections>
                                     <action selector="UserCreationConfirmed:" destination="lTe-O7-Agq" eventType="touchUpInside" id="5RI-g7-M38"/>
-                                    <segue destination="5m3-OJ-kb2" kind="show" id="W8j-0t-6Kg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8L-Is-ONh">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Nevermind, just log in ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyQ-qh-IUr">
+                                <rect key="frame" x="204" y="373" width="193" height="30"/>
+                                <state key="normal" title="Nevermind, Back to LogIn ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="68" y="383" width="264" height="30"/>
+                                    <rect key="frame" x="104" y="367" width="193" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="5m3-OJ-kb2" kind="show" id="2iO-PZ-mmW"/>
+                                    <action selector="UserCreationCancelled:" destination="lTe-O7-Agq" eventType="touchUpInside" id="3vS-eU-2C6"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cr7-I2-0bz">
+                                <rect key="frame" x="252" y="66" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="152" y="66" width="97" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="t8L-Is-ONh"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="t8L-Is-ONh"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="BackToLogIn" destination="t8L-Is-ONh" id="Hl4-at-MfP"/>
+                        <outlet property="BackToLogInButton" destination="SyQ-qh-IUr" id="rkj-Qh-RjI"/>
                         <outlet property="CompanyField" destination="0xO-Hh-43t" id="BXd-vq-C03"/>
                         <outlet property="ConfirmSignupButton" destination="2Pg-pO-I9X" id="Vhj-Su-aYp"/>
                         <outlet property="EmailField" destination="4hN-43-NJm" id="aDz-Vz-8nc"/>
@@ -317,7 +306,4 @@
             <point key="canvasLocation" x="1332" y="409"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="W8j-0t-6Kg"/>
-    </inferredMetricsTieBreakers>
 </document>
