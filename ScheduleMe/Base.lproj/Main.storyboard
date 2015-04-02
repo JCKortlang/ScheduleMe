@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ycO-fB-pqW" kind="relationship" relationship="rootViewController" id="9l7-UR-tx0"/>
+                        <segue destination="ycO-fB-pqW" kind="relationship" relationship="rootViewController" id="fVa-Kj-KKb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dA-ek-2sI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -31,44 +31,12 @@
                     <view key="view" contentMode="scaleToFill" id="QI0-kw-dBz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2c-8a-TIw">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Calendar View">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="150" y="519" width="100" height="30"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="S3Q-7z-Wag" kind="show" id="QPp-uy-ITB"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bXE-PT-52W">
-                                <rect key="frame" x="16" y="72" width="568" height="75"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="428"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="ycO-fB-pqW" id="tEL-km-vsL"/>
-                                    <outlet property="delegate" destination="ycO-fB-pqW" id="dfK-Av-BbN"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="m2c-8a-TIw"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="m2c-8a-TIw"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="IlH-Wg-Gkw"/>
+                    <connections>
+                        <segue destination="S3Q-7z-Wag" kind="show" identifier="CalendarSegue" id="FZY-Y9-4SY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN1-mh-hiV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

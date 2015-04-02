@@ -27,37 +27,44 @@
     logoutButton.title = @"Logout";
     [logoutButton setTarget:self];
     [logoutButton setAction:@selector(logoutButtonClicked)];
+
+    [[self navigationItem] setLeftBarButtonItem:logoutButton];
     
-    [[self navigationItem] setRightBarButtonItem:logoutButton];
+    UIBarButtonItem* makeAppointmentButton = [[UIBarButtonItem alloc] init];
+    makeAppointmentButton.title = @"Schedule";
+    [makeAppointmentButton setTarget:self];
+    [makeAppointmentButton setAction:@selector(makeAppointmentButtonClicked)];
+    
+    [[self navigationItem] setRightBarButtonItem:makeAppointmentButton];
     
     [self updateUINavItemTitle];
     
-    [self getAppointmentsForCurrentUser];
-    [self populateAppointmentTableView];
+//    [self getAppointmentsForCurrentUser];
+//    [self populateAppointmentTableView];
 }
 
--(void) getAppointmentsForCurrentUser
-{
-    PFQuery* query = [PFQuery queryWithClassName:@"Appointment"];
-    [query whereKey:@"scheduledBy" equalTo:[PFUser currentUser]];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        
-        if(error == nil)
-        {
-            //copy read objects into global Array 
-            
-        }
-    }];
-}
+//-(void) getAppointmentsForCurrentUser
+//{
+//    PFQuery* query = [PFQuery queryWithClassName:@"Appointment"];
+//    [query whereKey:@"scheduledBy" equalTo:[PFUser currentUser]];
+//    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        
+//        if(error == nil)
+//        {
+//            //copy read objects into global Array 
+//            
+//        }
+//    }];
+//}
 
-//this function will populate the appointment view on the first screen
--(void) populateAppointmentTableView{
-    //call the method to get all the info from parse
-    [self getAppointmentsForCurrentUser];
-    //push that data into the tableview
-    
-}
+////this function will populate the appointment view on the first screen
+//-(void) populateAppointmentTableView{
+//    //call the method to get all the info from parse
+//    [self getAppointmentsForCurrentUser];
+//    //push that data into the tableview
+//    
+//}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -108,17 +115,22 @@
      }];
 }
 
+-(void)makeAppointmentButtonClicked
+{
+    [self performSegueWithIdentifier:@"CalendarSegue" sender:self];
+}
+
 -(void)updateUINavItemTitle
 {
     
-    NSString* welcomeString = @"";
+//    NSString* welcomeString = @"";
+//    
+//    if ([PFUser currentUser].isAuthenticated)
+//    {
+//        welcomeString = [NSString stringWithFormat:@"Welcome %@",[PFUser currentUser].username];
+//    }
     
-    if ([PFUser currentUser].isAuthenticated)
-    {
-        welcomeString = [NSString stringWithFormat:@"Welcome %@",[PFUser currentUser].username];
-    }
-    
-    [[self navigationItem] setTitle:welcomeString];
+    [[self navigationItem] setTitle:@"Your Appointments"];
 }
 
 // Sent to the delegate to determine whether the log in request should be submitted to the server.
@@ -184,7 +196,9 @@
 
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(SignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
-    [self dismissModalViewControllerAnimated:YES]; // Dismiss the PFSignUpViewController
+    [self dismissViewControllerAnimated:YES completion:^{
+        ;
+    }];
 }
 
 // Sent to the delegate when the sign up attempt fails.
