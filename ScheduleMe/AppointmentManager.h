@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Appointment.h"
 
 @interface AppointmentManager : NSObject
+
+@property NSArray* appointments;
+
++(AppointmentManager*) getInstance;
+-(void)scheduleAppointmentOn:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot;
+-(NSArray*)getAppointmentsForDate:(NSDate*)aDate;
+-(void)getAppointmentsForCurrentUser;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AppointmentsTableViewController.h"
+#import "AppointmentManager.h"
 
 @interface AppointmentsTableViewController ()
 
@@ -16,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.appointments = [AppointmentManager getInstance].appointments;
+    
     NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterMediumStyle;
@@ -36,26 +40,27 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+    
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+    
     // Return the number of rows in the section.
-    return 0;
+    return self.appointments == nil ? 0:self.appointments.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
+    
+    UITableViewCell *cell = [[UITableViewCell alloc]init];
+    cell.textLabel.text = [NSString stringWithFormat:@"Foo %@", indexPath];
     
     // Configure the cell...
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

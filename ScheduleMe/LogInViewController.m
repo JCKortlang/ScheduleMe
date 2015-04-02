@@ -7,6 +7,7 @@
 //
 
 #import "LogInViewController.h"
+#import "AppointmentManager.h"
 
 @implementation LogInViewController
 
@@ -26,6 +27,7 @@
     if(user){
     
     [self.delegate logInViewController:self didLogInUser:[PFUser currentUser]];
+        [[AppointmentManager getInstance] getAppointmentsForCurrentUser];
         NSLog(@"Logged user in successfully!");
     }
     

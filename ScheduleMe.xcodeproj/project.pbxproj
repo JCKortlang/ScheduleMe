@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A02DE391ACCBB69007F7C74 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A02DE381ACCBB69007F7C74 /* CalendarViewController.m */; };
+		1A02DE3D1ACCC5C8007F7C74 /* AppointmentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A02DE3B1ACCC5C8007F7C74 /* AppointmentsTableViewController.m */; };
+		1A02DE421ACCCB01007F7C74 /* AppointmentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A02DE411ACCCB01007F7C74 /* AppointmentManager.m */; };
+		1A02DE461ACCCF3F007F7C74 /* Appointment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A02DE451ACCCF3F007F7C74 /* Appointment.m */; };
+		1A02DE501ACCE3E3007F7C74 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A02DE4A1ACCE3E3007F7C74 /* Bolts.framework */; };
+		1A02DE511ACCE3E3007F7C74 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A02DE4B1ACCE3E3007F7C74 /* Parse.framework */; };
+		1A02DE521ACCE3E3007F7C74 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A02DE4C1ACCE3E3007F7C74 /* ParseCrashReporting.framework */; };
+		1A02DE531ACCE3E3007F7C74 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A02DE4D1ACCE3E3007F7C74 /* ParseFacebookUtils.framework */; };
+		1A02DE541ACCE3E3007F7C74 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A02DE4E1ACCE3E3007F7C74 /* ParseFacebookUtilsV4.framework */; };
+		1A02DE551ACCE3E3007F7C74 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A02DE4F1ACCE3E3007F7C74 /* ParseUI.framework */; };
 		1A1DE77D1AC4E069006A431B /* CalendarPreviousMonth.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1DE7601AC4E069006A431B /* CalendarPreviousMonth.png */; };
 		1A1DE77E1AC4E069006A431B /* CalendarPreviousMonth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1DE7611AC4E069006A431B /* CalendarPreviousMonth@2x.png */; };
 		1A1DE77F1AC4E069006A431B /* CalendarRow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1DE7621AC4E069006A431B /* CalendarRow.png */; };
@@ -49,12 +59,6 @@
 		6C97E56A1AC49E9B00454832 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97E5691AC49E9B00454832 /* Accounts.framework */; };
 		6CB9B3C91ACB3007009FE5AB /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB9B3C81ACB3007009FE5AB /* SignUpViewController.m */; };
 		6CB9B3CC1ACB3F85009FE5AB /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB9B3CB1ACB3F85009FE5AB /* LogInViewController.m */; };
-		6CEC41F21ACC8534004D1FB6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEC41EC1ACC8534004D1FB6 /* Bolts.framework */; };
-		6CEC41F31ACC8534004D1FB6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEC41ED1ACC8534004D1FB6 /* Parse.framework */; };
-		6CEC41F41ACC8534004D1FB6 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEC41EE1ACC8534004D1FB6 /* ParseCrashReporting.framework */; };
-		6CEC41F51ACC8534004D1FB6 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEC41EF1ACC8534004D1FB6 /* ParseFacebookUtils.framework */; };
-		6CEC41F61ACC8534004D1FB6 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEC41F01ACC8534004D1FB6 /* ParseFacebookUtilsV4.framework */; };
-		6CEC41F71ACC8534004D1FB6 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEC41F11ACC8534004D1FB6 /* ParseUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A02DE371ACCBB69007F7C74 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		1A02DE381ACCBB69007F7C74 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		1A02DE3A1ACCC5C8007F7C74 /* AppointmentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentsTableViewController.h; sourceTree = "<group>"; };
+		1A02DE3B1ACCC5C8007F7C74 /* AppointmentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentsTableViewController.m; sourceTree = "<group>"; };
+		1A02DE401ACCCB01007F7C74 /* AppointmentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentManager.h; sourceTree = "<group>"; };
+		1A02DE411ACCCB01007F7C74 /* AppointmentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentManager.m; sourceTree = "<group>"; };
+		1A02DE441ACCCF3F007F7C74 /* Appointment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appointment.h; sourceTree = "<group>"; };
+		1A02DE451ACCCF3F007F7C74 /* Appointment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appointment.m; sourceTree = "<group>"; };
+		1A02DE4A1ACCE3E3007F7C74 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ParseFramework/Bolts.framework; sourceTree = "<group>"; };
+		1A02DE4B1ACCE3E3007F7C74 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ParseFramework/Parse.framework; sourceTree = "<group>"; };
+		1A02DE4C1ACCE3E3007F7C74 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = ParseFramework/ParseCrashReporting.framework; sourceTree = "<group>"; };
+		1A02DE4D1ACCE3E3007F7C74 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = ParseFramework/ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		1A02DE4E1ACCE3E3007F7C74 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = ParseFramework/ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		1A02DE4F1ACCE3E3007F7C74 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = ParseFramework/ParseUI.framework; sourceTree = "<group>"; };
 		1A1DE7601AC4E069006A431B /* CalendarPreviousMonth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CalendarPreviousMonth.png; sourceTree = "<group>"; };
 		1A1DE7611AC4E069006A431B /* CalendarPreviousMonth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CalendarPreviousMonth@2x.png"; sourceTree = "<group>"; };
 		1A1DE7621AC4E069006A431B /* CalendarRow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CalendarRow.png; sourceTree = "<group>"; };
@@ -126,12 +144,6 @@
 		6CB9B3C81ACB3007009FE5AB /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		6CB9B3CA1ACB3F85009FE5AB /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		6CB9B3CB1ACB3F85009FE5AB /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
-		6CEC41EC1ACC8534004D1FB6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		6CEC41ED1ACC8534004D1FB6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		6CEC41EE1ACC8534004D1FB6 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		6CEC41EF1ACC8534004D1FB6 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		6CEC41F01ACC8534004D1FB6 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-		6CEC41F11ACC8534004D1FB6 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,17 +151,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CEC41F21ACC8534004D1FB6 /* Bolts.framework in Frameworks */,
+				1A02DE501ACCE3E3007F7C74 /* Bolts.framework in Frameworks */,
 				6C97E56A1AC49E9B00454832 /* Accounts.framework in Frameworks */,
-				6CEC41F71ACC8534004D1FB6 /* ParseUI.framework in Frameworks */,
-				6CEC41F61ACC8534004D1FB6 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				6CEC41F51ACC8534004D1FB6 /* ParseFacebookUtils.framework in Frameworks */,
+				1A02DE551ACCE3E3007F7C74 /* ParseUI.framework in Frameworks */,
+				1A02DE541ACCE3E3007F7C74 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				1A02DE531ACCE3E3007F7C74 /* ParseFacebookUtils.framework in Frameworks */,
 				6C97E5681AC49E4400454832 /* Social.framework in Frameworks */,
-				6CEC41F41ACC8534004D1FB6 /* ParseCrashReporting.framework in Frameworks */,
+				1A02DE521ACCE3E3007F7C74 /* ParseCrashReporting.framework in Frameworks */,
 				6C97E5661AC49E3D00454832 /* Twitter.framework in Frameworks */,
 				6C97E5161AC4906100454832 /* libsqlite3.dylib in Frameworks */,
 				6C97E5141AC4905600454832 /* libz.dylib in Frameworks */,
-				6CEC41F31ACC8534004D1FB6 /* Parse.framework in Frameworks */,
+				1A02DE511ACCE3E3007F7C74 /* Parse.framework in Frameworks */,
 				6C97E5121AC4904400454832 /* SystemConfiguration.framework in Frameworks */,
 				6C97E5101AC4903A00454832 /* StoreKit.framework in Frameworks */,
 				6C97E50E1AC4902F00454832 /* Security.framework in Frameworks */,
@@ -175,12 +187,12 @@
 		1A0274B61AC4BA3200C512F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6CEC41EC1ACC8534004D1FB6 /* Bolts.framework */,
-				6CEC41ED1ACC8534004D1FB6 /* Parse.framework */,
-				6CEC41EE1ACC8534004D1FB6 /* ParseCrashReporting.framework */,
-				6CEC41EF1ACC8534004D1FB6 /* ParseFacebookUtils.framework */,
-				6CEC41F01ACC8534004D1FB6 /* ParseFacebookUtilsV4.framework */,
-				6CEC41F11ACC8534004D1FB6 /* ParseUI.framework */,
+				1A02DE4A1ACCE3E3007F7C74 /* Bolts.framework */,
+				1A02DE4B1ACCE3E3007F7C74 /* Parse.framework */,
+				1A02DE4C1ACCE3E3007F7C74 /* ParseCrashReporting.framework */,
+				1A02DE4D1ACCE3E3007F7C74 /* ParseFacebookUtils.framework */,
+				1A02DE4E1ACCE3E3007F7C74 /* ParseFacebookUtilsV4.framework */,
+				1A02DE4F1ACCE3E3007F7C74 /* ParseUI.framework */,
 				6C97E5151AC4906100454832 /* libsqlite3.dylib */,
 				6C97E5131AC4905600454832 /* libz.dylib */,
 				6C97E5691AC49E9B00454832 /* Accounts.framework */,
@@ -197,6 +209,34 @@
 				6C97E5011AC48FF300454832 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A02DE3F1ACCC6C2007F7C74 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A02DE3A1ACCC5C8007F7C74 /* AppointmentsTableViewController.h */,
+				1A02DE3B1ACCC5C8007F7C74 /* AppointmentsTableViewController.m */,
+				1A02DE371ACCBB69007F7C74 /* CalendarViewController.h */,
+				1A02DE381ACCBB69007F7C74 /* CalendarViewController.m */,
+				1A4001CC1AC339C500B64BA2 /* RootViewController.h */,
+				1A4001CD1AC339C500B64BA2 /* RootViewController.m */,
+				6CB9B3CA1ACB3F85009FE5AB /* LogInViewController.h */,
+				6CB9B3CB1ACB3F85009FE5AB /* LogInViewController.m */,
+				6CB9B3C71ACB3007009FE5AB /* SignUpViewController.h */,
+				6CB9B3C81ACB3007009FE5AB /* SignUpViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1A02DE431ACCCB08007F7C74 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A02DE441ACCCF3F007F7C74 /* Appointment.h */,
+				1A02DE451ACCCF3F007F7C74 /* Appointment.m */,
+				1A02DE401ACCCB01007F7C74 /* AppointmentManager.h */,
+				1A02DE411ACCCB01007F7C74 /* AppointmentManager.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		1A1DE75E1AC4E069006A431B /* TimeSquare */ = {
@@ -266,12 +306,8 @@
 			children = (
 				1A4001C91AC339C500B64BA2 /* AppDelegate.h */,
 				1A4001CA1AC339C500B64BA2 /* AppDelegate.m */,
-				1A4001CC1AC339C500B64BA2 /* RootViewController.h */,
-				1A4001CD1AC339C500B64BA2 /* RootViewController.m */,
-				6CB9B3CA1ACB3F85009FE5AB /* LogInViewController.h */,
-				6CB9B3CB1ACB3F85009FE5AB /* LogInViewController.m */,
-				6CB9B3C71ACB3007009FE5AB /* SignUpViewController.h */,
-				6CB9B3C81ACB3007009FE5AB /* SignUpViewController.m */,
+				1A02DE431ACCCB08007F7C74 /* Models */,
+				1A02DE3F1ACCC6C2007F7C74 /* ViewControllers */,
 				1A4001CF1AC339C500B64BA2 /* Main.storyboard */,
 				1A4001D21AC339C500B64BA2 /* Images.xcassets */,
 				1A4001D41AC339C500B64BA2 /* LaunchScreen.xib */,
@@ -422,8 +458,12 @@
 				1A4001CE1AC339C500B64BA2 /* RootViewController.m in Sources */,
 				1A4001CB1AC339C500B64BA2 /* AppDelegate.m in Sources */,
 				1A1DE78D1AC4E069006A431B /* TSQCalendarView.m in Sources */,
+				1A02DE461ACCCF3F007F7C74 /* Appointment.m in Sources */,
 				1A1DE78A1AC4E069006A431B /* TSQCalendarCell.m in Sources */,
+				1A02DE391ACCBB69007F7C74 /* CalendarViewController.m in Sources */,
+				1A02DE421ACCCB01007F7C74 /* AppointmentManager.m in Sources */,
 				1A1DE78C1AC4E069006A431B /* TSQCalendarRowCell.m in Sources */,
+				1A02DE3D1ACCC5C8007F7C74 /* AppointmentsTableViewController.m in Sources */,
 				1A4001C81AC339C500B64BA2 /* main.m in Sources */,
 				6CB9B3C91ACB3007009FE5AB /* SignUpViewController.m in Sources */,
 				6CB9B3CC1ACB3F85009FE5AB /* LogInViewController.m in Sources */,

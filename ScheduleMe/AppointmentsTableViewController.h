@@ -11,5 +11,6 @@
 @interface AppointmentsTableViewController : UITableViewController
 
 @property NSDate* selectedDate;
+@property NSArray* appointments;
 
 @end

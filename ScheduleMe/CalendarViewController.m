@@ -9,6 +9,7 @@
 #import "CalendarViewController.h"
 #import "TSQTACalendarRowCell.h"
 #import "AppointmentsTableViewController.h"
+#import "AppointmentManager.h"
 
 @interface CalendarViewController ()
 
@@ -98,6 +99,7 @@
  */
 - (void)calendarView:(TSQCalendarView *)calendarView didSelectDate:(NSDate *)date
 {
+    [[AppointmentManager getInstance] getAppointmentsForCurrentUser];
     self.selectedDate = date;
     [self performSegueWithIdentifier:@"AppointmentSegue" sender:self];
 }
