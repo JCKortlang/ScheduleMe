@@ -14,7 +14,9 @@
 #import "AppointmentsTableViewController.h"
 #import <Parse/Parse.h>
 
-@interface RootViewController ()
+@interface RootViewController()
+
+@property NSArray* data;
 
 @end
 
@@ -22,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     UIBarButtonItem* logoutButton = [[UIBarButtonItem alloc]init];
     logoutButton.title = @"Logout";
     [logoutButton setTarget:self];
@@ -38,33 +40,20 @@
     [[self navigationItem] setRightBarButtonItem:makeAppointmentButton];
     
     [self updateUINavItemTitle];
-    
-//    [self getAppointmentsForCurrentUser];
-//    [self populateAppointmentTableView];
 }
 
-//-(void) getAppointmentsForCurrentUser
-//{
-//    PFQuery* query = [PFQuery queryWithClassName:@"Appointment"];
-//    [query whereKey:@"scheduledBy" equalTo:[PFUser currentUser]];
-//    
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        
-//        if(error == nil)
-//        {
-//            //copy read objects into global Array 
-//            
-//        }
-//    }];
-//}
-
-////this function will populate the appointment view on the first screen
-//-(void) populateAppointmentTableView{
-//    //call the method to get all the info from parse
-//    [self getAppointmentsForCurrentUser];
-//    //push that data into the tableview
-//    
-//}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [[AppointmentManager getInstance] getAppointmentsForCurrentUserWithCallback:^(bool didSucceed) {
+        
+        if (didSucceed)
+        {
+            self.data = [[AppointmentManager getInstance] currentUsersAppointments];
+            NSLog(self.data.description);
+            [self.tableView reloadData];
+        }
+    }];
+}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -75,13 +64,47 @@
     }
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.data != nil)
+    {
+        Appointment* appointment = (Appointment*)[self.data objectAtIndex:indexPath.row];
+        
+        long startTime = START_TIMESLOT;
+        long timeSlot = [appointment.forTimeslot longValue];
+        
+        NSString* time = [Appointment timeDescriptionFromStartingTime:startTime WithTimeslot:timeSlot];
+        NSString* date = [Appointment dateOnlyDescriptionFromDate:appointment.onDate];
+        
+        UITableViewCell* cell = [[UITableViewCell alloc] init];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ at %@", date,time];
+        
+        return cell;
+    }
+    
+    return nil;
+}
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.data == nil ? 0 : self.data.count;
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
 -(void)showLoginViewController
 {
-    //do nothing if we have a user
-    if([PFUser currentUser]) return;
-    
-    
-//    LogInViewController *loginViewController = [[LogInViewController alloc] init];
     LogInViewController *loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LogInViewController"];
     //figure out the delegate stuff
     [loginViewController setDelegate:self];
@@ -91,7 +114,6 @@
     [signupViewController setDelegate:self];
     
     //[loginViewController setSignUpController:signupViewController];
-    
     [self presentViewController:loginViewController animated:YES completion:nil];
 }
 
@@ -122,14 +144,6 @@
 
 -(void)updateUINavItemTitle
 {
-    
-//    NSString* welcomeString = @"";
-//    
-//    if ([PFUser currentUser].isAuthenticated)
-//    {
-//        welcomeString = [NSString stringWithFormat:@"Welcome %@",[PFUser currentUser].username];
-//    }
-    
     [[self navigationItem] setTitle:@"Your Appointments"];
 }
 
@@ -197,7 +211,7 @@
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(SignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:^{
-        ;
+        
     }];
 }
 
@@ -209,11 +223,6 @@
 // Sent to the delegate when the sign up screen is dismissed.
 - (void)signUpViewControllerDidCancelSignUp:(SignUpViewController *)signUpController {
     NSLog(@"User dismissed the signUpViewController");
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
