@@ -30,16 +30,7 @@
     [self.tableView registerNib:cellNib forCellReuseIdentifier:APPOINTMENT_CELL_IDENTIFIER];
     
     //Set the NavItem title to the date.
-    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
-    formatter.timeStyle = NSDateFormatterNoStyle;
-    formatter.dateStyle = NSDateFormatterFullStyle;
-    self.navigationItem.title = [formatter stringFromDate:self.selectedDate];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.title = [Appointment dateOnlyDescriptionFromDate:self.selectedDate];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,9 +62,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
-    // Return the number of rows in the section.
-    return 8;
+    return TIMESLOT_COUNT;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -149,8 +138,8 @@
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     self.selectedIndex = [[NSNumber alloc] initWithInteger:indexPath.row];
 }
 

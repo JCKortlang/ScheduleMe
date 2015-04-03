@@ -10,6 +10,7 @@
 #import "Appointment.h"
 
 extern long const START_TIMESLOT;
+extern long const TIMESLOT_COUNT;
 
 @interface AppointmentManager : NSObject
 
@@ -19,7 +20,8 @@ extern long const START_TIMESLOT;
 +(AppointmentManager*) getInstance;
 -(void)scheduleAppointmentOn:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot WithCallback:(void(^)(bool success))callback;
 -(void)getAppointmentsForDate:(NSDate*)aDate WithCallback:(void(^)(BOOL SUCCESS))callback;
--(void) getAppointmentsForCurrentUserWithCallback:(void(^)(bool didSucceed))callback;
+-(void)getAppointmentsForCurrentUserWithCallback:(void(^)(bool didSucceed))callback;
+-(void)cancelAppointmentOnDate:(NSDate*)aDate OnTimeslot:(NSNumber*)aTimeslot WithCallback:(void(^)(bool didSucceed))callback;
 -(bool)checkTimeslotAvailability:(NSNumber*) aTimeslot;
 
 @end

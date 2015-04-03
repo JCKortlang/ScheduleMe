@@ -24,6 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UINib *cellNib = [UINib nibWithNibName:USER_APPOINTMENT_CELL_IDENTIFIER bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:USER_APPOINTMENT_CELL_IDENTIFIER];
 
     UIBarButtonItem* logoutButton = [[UIBarButtonItem alloc]init];
     logoutButton.title = @"Logout";
@@ -73,16 +76,24 @@
 {
     if (self.data != nil)
     {
+        NSString* MyIdentifier = USER_APPOINTMENT_CELL_IDENTIFIER;
+        
+        UserAppointmentTableViewCell *cell = (UserAppointmentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:MyIdentifier forIndexPath:indexPath];
+        
+        if(cell == nil)
+        {
+            //We create the style.
+            NSArray* nib = [[NSBundle mainBundle] loadNibNamed:MyIdentifier owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+
         Appointment* appointment = (Appointment*)[self.data objectAtIndex:indexPath.row];
         
         long startTime = START_TIMESLOT;
         long timeSlot = [appointment.forTimeslot longValue];
         
-        NSString* time = [Appointment timeDescriptionFromStartingTime:startTime WithTimeslot:timeSlot];
-        NSString* date = [Appointment dateOnlyDescriptionFromDate:appointment.onDate];
-        
-        UITableViewCell* cell = [[UITableViewCell alloc] init];
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ at %@", date,time];
+        cell.timeLabel.text = [Appointment timeDescriptionFromStartingTime:startTime WithTimeslot:timeSlot];
+        cell.dateLabel.text = [Appointment dateOnlyDescriptionFromDate:appointment.onDate];
         
         return cell;
     }
@@ -101,6 +112,11 @@
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70;
 }
 
 -(void)showLoginViewController

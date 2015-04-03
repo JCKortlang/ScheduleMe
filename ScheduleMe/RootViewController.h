@@ -11,6 +11,7 @@
 #import "RootViewController.h"
 #import "SignUpViewController.h"
 #import "LogInViewController.h"
+#import "UserAppointmentTableViewCell.h"
 
 @import ParseUI;
 

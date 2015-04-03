@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 
 long const START_TIMESLOT = 9;
+long const TIMESLOT_COUNT = 8;
 
 @interface AppointmentManager()
 
@@ -58,7 +59,6 @@ static AppointmentManager* instance;
             }
             else if (error != nil)
             {
-                NSLog([error description]);
                 callback(NO);
             }
         }];
@@ -81,7 +81,6 @@ static AppointmentManager* instance;
             }
             else
             {
-                NSLog(error.description);
                 callback(NO);
             }
         }];
@@ -99,15 +98,28 @@ static AppointmentManager* instance;
         if(error == nil)
         {
             self.currentUsersAppointments = objects;
-            NSLog(objects.description);
             callback(YES);
         }
         else
         {
-            NSLog(error.description);
             callback(NO);
         }
     }];
+}
+
+-(void)cancelAppointment:(Appointment*)anAppointment WithCallback:(void(^)(bool didSucceed))callback
+{
+    if(anAppointment != nil)
+    {
+        [anAppointment deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            
+            callback(succeeded);
+        }];
+    }
+    else
+    {
+        callback(NO);
+    }
 }
 
 -(bool) checkTimeslotAvailability:(NSNumber*) aTimeslot
