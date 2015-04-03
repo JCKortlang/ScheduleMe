@@ -24,4 +24,27 @@ NSString* const APPOINTMENT_CLASSNAME = @"Appointment";
 {
     return APPOINTMENT_CLASSNAME;
 }
+
++(NSString*)timeDescriptionFromStartingTime:(long)hourOfDay WithTimeslot:(long)aTimeslot
+{
+    NSString* result = nil;
+    
+    //Hacky but sufficient for a prototype.
+    long time = hourOfDay + aTimeslot;
+    NSString* timeAffix = time >= 12 ? @"PM" : @"AM";
+    time = time % 12;
+    time = time == 0 ? 12 : time;
+    result = [NSString stringWithFormat:@"%ld:00 %@", time, timeAffix];
+    
+    return result;
+}
+
++(NSString*)dateOnlyDescriptionFromDate:(NSDate*)aDate
+{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    formatter.dateStyle = NSDateFormatterFullStyle;
+    return [formatter stringFromDate:aDate];
+}
+
 @end

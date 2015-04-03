@@ -16,4 +16,7 @@ extern NSString* const APPOINTMENT_CLASSNAME;
 @property (nonatomic, strong) NSDate* onDate;
 @property (nonatomic, strong) NSNumber* forTimeslot;
 
++(NSString*)timeDescriptionFromStartingTime:(long)hourOfDay WithTimeslot:(long)aTimeslot;
++(NSString*)dateOnlyDescriptionFromDate:(NSDate*)aDate;
+
 @end

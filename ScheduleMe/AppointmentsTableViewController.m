@@ -11,7 +11,7 @@
 
 @interface AppointmentsTableViewController ()
 
-@property long firtAppointmentTime;
+@property long firstAppointmentTime;
 @property NSNumber* selectedIndex;
 
 @end
@@ -24,7 +24,7 @@
     //Only one reservation at a time.
     self.tableView.allowsMultipleSelection = false;
     
-    self.firtAppointmentTime = 9;
+    self.firstAppointmentTime = START_TIMESLOT;
     
     UINib *cellNib = [UINib nibWithNibName:APPOINTMENT_CELL_IDENTIFIER bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:APPOINTMENT_CELL_IDENTIFIER];
@@ -56,7 +56,6 @@
             // Force the table view to redraw itself.
             NSMutableArray* array = [[NSMutableArray alloc]init];
             [array addObject:self.selectedIndex];
-            
             //Inefficient.
             [self.tableView reloadData];
         }
@@ -102,13 +101,7 @@
         cell.availableMessage.textColor = [[UIColor alloc] initWithRed:255 green:0 blue:0 alpha:1];
     }
     
-    //Hacky but sufficient for a prototype.
-    long time = self.firtAppointmentTime + indexPath.row;
-    NSString* timeAffix = time >= 12 ? @"PM" : @"AM";
-    time = time % 12;
-    time = time == 0 ? 12 : time;
-    
-    cell.time.text = [NSString stringWithFormat:@"%ld:00 %@", time, timeAffix];
+    cell.time.text = [Appointment timeDescriptionFromStartingTime:self.firstAppointmentTime WithTimeslot:indexPath.row];
     
     return cell;
 }
