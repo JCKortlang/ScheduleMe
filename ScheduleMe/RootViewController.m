@@ -17,6 +17,7 @@
 @interface RootViewController()
 
 @property NSArray* data;
+@property long selectedIndex;
 
 @end
 
@@ -25,9 +26,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //Prepare the reusable cell.
     UINib *cellNib = [UINib nibWithNibName:USER_APPOINTMENT_CELL_IDENTIFIER bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:USER_APPOINTMENT_CELL_IDENTIFIER];
-
+    
+    self.tableView.allowsMultipleSelection = false;
+    
     UIBarButtonItem* logoutButton = [[UIBarButtonItem alloc]init];
     logoutButton.title = @"Logout";
     [logoutButton setTarget:self];
@@ -72,6 +76,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)cancelButton_OnTouchUp:(id)sender
+{
+    Appointment* appointment = (Appointment*)[self.data objectAtIndex:self.selectedIndex];
+    
+    [[AppointmentManager getInstance] cancelAppointment:appointment WithCallback:^(bool didSucceed){
+        if(didSucceed)
+        {
+            self.data = [AppointmentManager getInstance].currentUsersAppointments;
+            [self.tableView reloadData];
+        }
+    }];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.data != nil)
@@ -92,6 +109,7 @@
         long startTime = START_TIMESLOT;
         long timeSlot = [appointment.forTimeslot longValue];
         
+        cell.delegate = self;
         cell.timeLabel.text = [Appointment timeDescriptionFromStartingTime:startTime WithTimeslot:timeSlot];
         cell.dateLabel.text = [Appointment dateOnlyDescriptionFromDate:appointment.onDate];
         
@@ -101,10 +119,11 @@
     return nil;
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //
+    self.selectedIndex = indexPath.row;
 }
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.data == nil ? 0 : self.data.count;

@@ -23,4 +23,11 @@ NSString* const USER_APPOINTMENT_CELL_IDENTIFIER = @"UserAppointmentTableViewCel
     [self.cancelButton setHidden:!selected];
 }
 
+- (IBAction)cancelButton_OnTouchUp:(id)sender
+{
+    if (self.delegate != nil)
+    {
+        [self.delegate cancelButton_OnTouchUp:self];
+    }
+}
 @end

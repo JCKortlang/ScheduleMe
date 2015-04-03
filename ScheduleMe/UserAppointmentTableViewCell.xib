@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,33 +14,43 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S32-RM-jYU">
-                        <rect key="frame" x="8" y="8" width="257" height="25"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S32-RM-jYU">
+                        <rect key="frame" x="8" y="9" width="257" height="25"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFG-gb-eTX">
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFG-gb-eTX">
                         <rect key="frame" x="273" y="8" width="70" height="54"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <state key="normal" title="Cancel">
                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="cancelButton_OnTouchUp:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="d5Q-po-5sP"/>
+                        </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHs-aM-iea">
-                        <rect key="frame" x="8" y="41" width="257" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHs-aM-iea">
+                        <rect key="frame" x="8" y="42" width="257" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="CHs-aM-iea" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1oq-kO-tDu"/>
+                    <constraint firstItem="vFG-gb-eTX" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="5UL-Jg-8ZG"/>
+                    <constraint firstItem="S32-RM-jYU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ZNR-l0-o5g"/>
+                    <constraint firstItem="CHs-aM-iea" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="iBW-c6-6zt"/>
+                    <constraint firstItem="S32-RM-jYU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="zkO-Iv-KHN"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="cancelButton" destination="vFG-gb-eTX" id="ezb-GM-G3d"/>
                 <outlet property="dateLabel" destination="S32-RM-jYU" id="mdJ-7V-0q0"/>
                 <outlet property="timeLabel" destination="CHs-aM-iea" id="GRd-Jd-Cml"/>
             </connections>
-            <point key="canvasLocation" x="294.5" y="160"/>
+            <point key="canvasLocation" x="294.5" y="159"/>
         </tableViewCell>
     </objects>
 </document>

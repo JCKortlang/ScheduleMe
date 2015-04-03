@@ -31,7 +31,7 @@ extern NSString* const APPOINTMENT_CELL_IDENTIFIER;
 
 @property (weak, nonatomic) IBOutlet UILabel *time;
 
-- (IBAction)buttonClicked:(id)sender;
+-(IBAction)buttonClicked:(id)sender;
 
 
 @end

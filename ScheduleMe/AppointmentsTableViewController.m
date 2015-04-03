@@ -44,9 +44,6 @@
     [[AppointmentManager getInstance] scheduleAppointmentOn:self.selectedDate ForTimeslot:self.selectedIndex WithCallback:^(bool success) {
         if(success)
         {
-            // Force the table view to redraw itself.
-            NSMutableArray* array = [[NSMutableArray alloc]init];
-            [array addObject:self.selectedIndex];
             //Inefficient.
             [self.tableView reloadData];
         }

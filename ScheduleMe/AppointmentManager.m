@@ -113,7 +113,16 @@ static AppointmentManager* instance;
     {
         [anAppointment deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             
-            callback(succeeded);
+            if(succeeded)
+            {
+                [self getAppointmentsForCurrentUserWithCallback:^(bool didSucceed) {
+                    callback(didSucceed);
+                }];
+            }
+            else
+            {
+                callback(succeeded);
+            }
         }];
     }
     else
