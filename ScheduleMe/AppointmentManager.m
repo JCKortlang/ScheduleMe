@@ -9,6 +9,8 @@
 #import "AppointmentManager.h"
 #import <Parse/Parse.h>
 
+long const START_TIMESLOT = 9;
+
 @interface AppointmentManager()
 
 @end
@@ -86,21 +88,24 @@ static AppointmentManager* instance;
     }
 }
 
--(void) getAppointmentsForCurrentUser
+-(void) getAppointmentsForCurrentUserWithCallback:(void(^)(bool didSucceed))callback
 {
     PFQuery* query = [PFQuery queryWithClassName:APPOINTMENT_CLASSNAME];
     [query whereKey:@"scheduledBy" equalTo:[PFUser objectWithoutDataWithObjectId:[PFUser currentUser].objectId]];
-    [query orderByAscending:@"forTimeslot"];
+    [query orderByAscending:@"onDate"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
         if(error == nil)
         {
             self.currentUsersAppointments = objects;
+            NSLog(objects.description);
+            callback(YES);
         }
         else
         {
             NSLog(error.description);
+            callback(NO);
         }
     }];
 }

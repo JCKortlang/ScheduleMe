@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Appointment.h"
 
+extern long const START_TIMESLOT;
+
 @interface AppointmentManager : NSObject
 
 @property NSArray* appointments;
@@ -17,6 +19,7 @@
 +(AppointmentManager*) getInstance;
 -(void)scheduleAppointmentOn:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot WithCallback:(void(^)(bool success))callback;
 -(void)getAppointmentsForDate:(NSDate*)aDate WithCallback:(void(^)(BOOL SUCCESS))callback;
+-(void) getAppointmentsForCurrentUserWithCallback:(void(^)(bool didSucceed))callback;
 -(bool)checkTimeslotAvailability:(NSNumber*) aTimeslot;
 
 @end
