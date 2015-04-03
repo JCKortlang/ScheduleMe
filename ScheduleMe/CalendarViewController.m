@@ -89,7 +89,15 @@
 - (BOOL)calendarView:(TSQCalendarView *)calendarView shouldSelectDate:(NSDate *)date
 {
     NSDate* today = [[NSDate alloc]init];
-    return [date compare:today];
+    
+    if ([date compare:today] == NSOrderedDescending)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 /** Tells the delegate that a particular date was selected.
@@ -104,10 +112,6 @@
         if(SUCCESS)
         {
             [self performSegueWithIdentifier:@"AppointmentSegue" sender:self];
-        }
-        else
-        {
-            //Cry?
         }
     }];
     
