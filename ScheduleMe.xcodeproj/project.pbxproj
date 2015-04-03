@@ -45,6 +45,8 @@
 		1A4001D31AC339C500B64BA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4001D21AC339C500B64BA2 /* Images.xcassets */; };
 		1A4001D61AC339C500B64BA2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4001D41AC339C500B64BA2 /* LaunchScreen.xib */; };
 		1A4001E21AC339C500B64BA2 /* ScheduleMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4001E11AC339C500B64BA2 /* ScheduleMeTests.m */; };
+		1AB4F0161ACE1B4900E42B5D /* UserAppointmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4F0141ACE1B4900E42B5D /* UserAppointmentTableViewCell.m */; };
+		1AB4F0171ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4F0151ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib */; };
 		6C97E5021AC48FF300454832 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97E5011AC48FF300454832 /* AudioToolbox.framework */; };
 		6C97E5041AC48FFC00454832 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97E5031AC48FFC00454832 /* CFNetwork.framework */; };
 		6C97E5061AC4900900454832 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97E5051AC4900900454832 /* CoreGraphics.framework */; };
@@ -131,6 +133,9 @@
 		1A4001DB1AC339C500B64BA2 /* ScheduleMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4001E01AC339C500B64BA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A4001E11AC339C500B64BA2 /* ScheduleMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScheduleMeTests.m; sourceTree = "<group>"; };
+		1AB4F0131ACE1B4900E42B5D /* UserAppointmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAppointmentTableViewCell.h; sourceTree = "<group>"; };
+		1AB4F0141ACE1B4900E42B5D /* UserAppointmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAppointmentTableViewCell.m; sourceTree = "<group>"; };
+		1AB4F0151ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAppointmentTableViewCell.xib; sourceTree = "<group>"; };
 		6C97E5011AC48FF300454832 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		6C97E5031AC48FFC00454832 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6C97E5051AC4900900454832 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -314,6 +319,9 @@
 				1A02DE561ACCE52D007F7C74 /* AppointmentTableViewCell.h */,
 				1A02DE571ACCE52D007F7C74 /* AppointmentTableViewCell.m */,
 				1A02DE581ACCE52D007F7C74 /* AppointmentTableViewCell.xib */,
+				1AB4F0131ACE1B4900E42B5D /* UserAppointmentTableViewCell.h */,
+				1AB4F0141ACE1B4900E42B5D /* UserAppointmentTableViewCell.m */,
+				1AB4F0151ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib */,
 				1A02DE431ACCCB08007F7C74 /* Models */,
 				1A02DE3F1ACCC6C2007F7C74 /* ViewControllers */,
 				1A4001CF1AC339C500B64BA2 /* Main.storyboard */,
@@ -432,6 +440,7 @@
 			files = (
 				1A1DE7891AC4E069006A431B /* Default@2x.png in Resources */,
 				1A1DE7831AC4E069006A431B /* CalendarSelectedDate.png in Resources */,
+				1AB4F0171ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib in Resources */,
 				1A1DE77F1AC4E069006A431B /* CalendarRow.png in Resources */,
 				1A1DE7821AC4E069006A431B /* CalendarRowBottom@2x.png in Resources */,
 				1A4001D11AC339C500B64BA2 /* Main.storyboard in Resources */,
@@ -467,6 +476,7 @@
 				1A4001CE1AC339C500B64BA2 /* RootViewController.m in Sources */,
 				1A4001CB1AC339C500B64BA2 /* AppDelegate.m in Sources */,
 				1A1DE78D1AC4E069006A431B /* TSQCalendarView.m in Sources */,
+				1AB4F0161ACE1B4900E42B5D /* UserAppointmentTableViewCell.m in Sources */,
 				1A02DE461ACCCF3F007F7C74 /* Appointment.m in Sources */,
 				1A1DE78A1AC4E069006A431B /* TSQCalendarCell.m in Sources */,
 				1A02DE391ACCBB69007F7C74 /* CalendarViewController.m in Sources */,
