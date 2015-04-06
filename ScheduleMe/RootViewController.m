@@ -119,6 +119,22 @@
     return nil;
 }
 
+// Added: User can delete an appointment by swiping to the left and clicking on the delete button
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        Appointment* appointment = (Appointment*)[self.data objectAtIndex:indexPath.row];
+        
+        [[AppointmentManager getInstance] cancelAppointment:appointment WithCallback:^(bool didSucceed){
+            if(didSucceed)
+            {
+                self.data = [AppointmentManager getInstance].currentUsersAppointments;
+                [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+        }];
+    }
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.selectedIndex = indexPath.row;
