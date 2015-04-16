@@ -76,6 +76,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
+// this makes the cancel button appear
 -(IBAction)cancelButton_OnTouchUp:(id)sender
 {
     Appointment* appointment = (Appointment*)[self.data objectAtIndex:self.selectedIndex];
@@ -88,6 +90,9 @@
         }
     }];
 }
+ */
+
+// TABLE VIEW CODE STARTS HERE !!
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -96,7 +101,7 @@
         NSString* MyIdentifier = USER_APPOINTMENT_CELL_IDENTIFIER;
         
         UserAppointmentTableViewCell *cell = (UserAppointmentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:MyIdentifier forIndexPath:indexPath];
-        
+         
         if(cell == nil)
         {
             //We create the style.
@@ -113,11 +118,12 @@
         cell.timeLabel.text = [Appointment timeDescriptionFromStartingTime:startTime WithTimeslot:timeSlot];
         cell.dateLabel.text = [Appointment dateOnlyDescriptionFromDate:appointment.onDate];
         
-        return cell;
+                return cell;
     }
     
     return nil;
 }
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -137,6 +143,31 @@
 {
     return 70;
 }
+
+/* <--- added by Jake Irvin ---> */
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // get the selected appointment
+    Appointment * appointment = (Appointment *)[self.data objectAtIndex:indexPath.row];
+    
+    // Call the cancelAppointment method to cancel the selected appointment
+    [[AppointmentManager getInstance] cancelAppointment:appointment WithCallback:^(bool didSucceed){
+        if(didSucceed)
+        {
+            // reset self.data after appointment canceled
+            self.data = [AppointmentManager getInstance].currentUsersAppointments;
+            // animate the cell being deleted
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
+    }];
+}
+
+/* <---- END added by Jake Irvin ----> */
 
 -(void)showLoginViewController
 {
