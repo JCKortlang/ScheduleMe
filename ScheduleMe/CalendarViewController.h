@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TimesSquare.h"
 
-@interface CalendarViewController : UIViewController <TSQCalendarViewDelegate>
+@interface CalendarViewController : UIViewController <TSQCalendarViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic,strong) NSCalendar* calendar;
 @property NSDate* selectedDate;

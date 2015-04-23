@@ -20,8 +20,11 @@ extern long const TIMESLOT_COUNT;
 @property NSString* currentCompany;
 
 +(AppointmentManager*) getInstance;
--(void)scheduleAppointmentOn:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot WithCallback:(void(^)(bool success))callback;
--(void)getAppointmentsForDate:(NSDate*)aDate WithCallback:(void(^)(BOOL SUCCESS))callback;
+
+-(void)scheduleAppointmentForCompany:(Company*)aCompany OnDate:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot WithCallback:(void(^)(bool success))callback;
+
+-(void)getAppointmentsForCompany:(Company*)aCompany ForDate:(NSDate*)aDate WithCallback:(void(^)(BOOL SUCCESS))callback;
+
 -(void)getAppointmentsForCurrentUserWithCallback:(void(^)(bool didSucceed))callback;
 -(void)cancelAppointment:(Appointment*)anAppointment WithCallback:(void(^)(bool didSucceed))callback;
 -(bool)checkTimeslotAvailability:(NSNumber*) aTimeslot;

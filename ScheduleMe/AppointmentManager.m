@@ -42,25 +42,33 @@ static AppointmentManager* instance;
     }
     return instance;
 }
-
-
--(void)scheduleAppointmentOn:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot WithCallback:(void(^)(bool success))callback
+-(void)scheduleAppointmentForCompany:(Company*)aCompany OnDate:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot WithCallback:(void(^)(bool success))callback
 {
-    if (aDate != nil && aTimeslot != nil)
+    if(aCompany != nil && aDate != nil && aTimeslot != nil)
     {
         Appointment* theAppointment = [Appointment object];
         theAppointment.forTimeslot = aTimeslot;
+        theAppointment.forCompany = aCompany;
         theAppointment.onDate = aDate;
         theAppointment.scheduledBy = [PFUser currentUser];
         
         [theAppointment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if(succeeded)
+            
+            if (succeeded)
             {
-                [self getAppointmentsForDate:aDate WithCallback:^(BOOL SUCCESS) {
-                    callback(SUCCESS);
+                [self getAppointmentsForCompany:aCompany ForDate:aDate WithCallback:^(BOOL SUCCESS) {
+                    
+                    if(SUCCESS)
+                    {
+                        callback(YES);
+                    }
+                    else
+                    {
+                        callback(NO);
+                    }
                 }];
             }
-            else if (error != nil)
+            else
             {
                 callback(NO);
             }
@@ -81,12 +89,13 @@ static AppointmentManager* instance;
     }];
 }
 
--(void)getAppointmentsForDate:(NSDate*)aDate WithCallback:(void(^)(BOOL SUCCESS))callback
+-(void)getAppointmentsForCompany:(Company*)aCompany ForDate:(NSDate*)aDate WithCallback:(void(^)(BOOL SUCCESS))callback
 {
-    if(aDate != nil)
+    if(aCompany != nil && aDate != nil)
     {
         PFQuery* query = [PFQuery queryWithClassName:APPOINTMENT_CLASSNAME];
         [query whereKey:@"onDate" equalTo:aDate];
+        [query whereKey:@"forCompany" equalTo:aCompany];
         
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             
@@ -100,6 +109,7 @@ static AppointmentManager* instance;
                 callback(NO);
             }
         }];
+        
     }
 }
 

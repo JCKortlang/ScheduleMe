@@ -13,6 +13,8 @@
 
 @interface CalendarViewController ()
 
+@property (nonatomic, strong) Company* selectedCompany;
+
 @end
 
 @interface TSQCalendarView (AccessingPrivateStuff)
@@ -27,12 +29,50 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    UITableView* companies = [[UITableView alloc] init];
+    [companies setDataSource:self];
+    [companies setDelegate:self];
     
+    UITableViewController* tableViewController = [[UITableViewController alloc]init];
+    tableViewController.tableView = companies;
+    tableViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    [self presentViewController:tableViewController animated:true completion:^{
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedCompany = [AppointmentManager getInstance].companies[indexPath.row];
+    self.navigationItem.title = self.selectedCompany.name;
+    [self dismissViewControllerAnimated:YES completion:^{
+        //
+    }];
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Company* company = [[AppointmentManager getInstance].companies objectAtIndex:indexPath.row];
+    
+    UITableViewCell* cell = [[UITableViewCell alloc]init];
+    cell.textLabel.text = company.name;
+    return cell;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [AppointmentManager getInstance].companies == nil ? 0:[AppointmentManager getInstance].companies.count;
 }
 
 - (void)loadView;
@@ -110,8 +150,9 @@
 - (void)calendarView:(TSQCalendarView *)calendarView didSelectDate:(NSDate *)date
 {
     self.selectedDate = date;
-    [[AppointmentManager getInstance] getAppointmentsForDate:date WithCallback:^(BOOL SUCCESS) {
-        if(SUCCESS)
+    [[AppointmentManager getInstance] getAppointmentsForCompany:self.selectedCompany ForDate:date WithCallback:^(BOOL SUCCESS) {
+        
+        if (SUCCESS)
         {
             [self performSegueWithIdentifier:@"AppointmentSegue" sender:self];
         }
@@ -129,6 +170,7 @@
     {
         AppointmentsTableViewController* destinationViewController = segue.destinationViewController;
         destinationViewController.selectedDate = self.selectedDate;
+        destinationViewController.selectedCompany = self.selectedCompany;
     }
 }
 

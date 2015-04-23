@@ -41,13 +41,22 @@
 
 -(IBAction)reserveButtonClicked:(id)sender
 {
-    [[AppointmentManager getInstance] scheduleAppointmentOn:self.selectedDate ForTimeslot:self.selectedIndex WithCallback:^(bool success) {
+    [[AppointmentManager getInstance] scheduleAppointmentForCompany:self.selectedCompany OnDate:self.selectedDate ForTimeslot:self.selectedIndex WithCallback:^(bool success) {
+       
         if(success)
         {
-            //Inefficient.
             [self.tableView reloadData];
         }
+        
     }];
+    
+//    [[AppointmentManager getInstance] scheduleAppointmentOn:self.selectedDate ForTimeslot:self.selectedIndex WithCallback:^(bool success) {
+//        if(success)
+//        {
+//            //Inefficient.
+//            [self.tableView reloadData];
+//        }
+//    }];
 }
 
 #pragma mark - Table view data source

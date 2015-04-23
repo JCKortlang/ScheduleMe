@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "AppointmentTableViewCell.h"
+#import "Company.h"
 
 @interface AppointmentsTableViewController : UITableViewController <AppointmentReservation>
 
+@property Company* selectedCompany;
 @property NSDate* selectedDate;
 @property NSArray* appointments;
 
