@@ -7,6 +7,7 @@
 //
 
 #import <Parse/Parse.h>
+#import "Company.h"
 
 extern NSString* const APPOINTMENT_CLASSNAME;
 
@@ -15,6 +16,7 @@ extern NSString* const APPOINTMENT_CLASSNAME;
 @property (nonatomic, strong) PFUser* scheduledBy;
 @property (nonatomic, strong) NSDate* onDate;
 @property (nonatomic, strong) NSNumber* forTimeslot;
+@property (nonatomic, strong) Company* forCompany;
 
 +(NSString*)timeDescriptionFromStartingTime:(long)hourOfDay WithTimeslot:(long)aTimeslot;
 +(NSString*)dateOnlyDescriptionFromDate:(NSDate*)aDate;

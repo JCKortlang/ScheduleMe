@@ -14,8 +14,10 @@ extern long const TIMESLOT_COUNT;
 
 @interface AppointmentManager : NSObject
 
+@property NSArray* companies;
 @property NSArray* appointments;
 @property NSArray* currentUsersAppointments;
+@property NSString* currentCompany;
 
 +(AppointmentManager*) getInstance;
 -(void)scheduleAppointmentOn:(NSDate*)aDate ForTimeslot:(NSNumber*) aTimeslot WithCallback:(void(^)(bool success))callback;

@@ -15,6 +15,7 @@ NSString* const APPOINTMENT_CLASSNAME = @"Appointment";
 @dynamic scheduledBy;
 @dynamic forTimeslot;
 @dynamic onDate;
+@dynamic forCompany;
 
 +(void)load
 {

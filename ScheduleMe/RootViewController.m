@@ -109,9 +109,9 @@
         long startTime = START_TIMESLOT;
         long timeSlot = [appointment.forTimeslot longValue];
         
-        cell.delegate = self;
         cell.timeLabel.text = [Appointment timeDescriptionFromStartingTime:startTime WithTimeslot:timeSlot];
         cell.dateLabel.text = [Appointment dateOnlyDescriptionFromDate:appointment.onDate];
+        cell.companyLabel.text = appointment.forCompany != nil ? appointment.forCompany.name : @"";
         
         return cell;
     }

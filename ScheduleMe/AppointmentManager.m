@@ -27,6 +27,8 @@ static AppointmentManager* instance;
     if (self)
     {
         self.appointments = nil;
+        self.companies = nil;
+        self.currentUsersAppointments = nil;
     }
     return self;
 }
@@ -36,6 +38,7 @@ static AppointmentManager* instance;
     if(instance == nil)
     {
         instance = [[AppointmentManager alloc]init];
+        [instance getCompanies];
     }
     return instance;
 }
@@ -65,6 +68,19 @@ static AppointmentManager* instance;
     }
 }
 
+-(void)getCompanies
+{
+    PFQuery* query = [PFQuery queryWithClassName:COMPANY_CLASSNAME];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        if (error == nil)
+        {
+            self.companies = objects;
+        }
+    }];
+}
+
 -(void)getAppointmentsForDate:(NSDate*)aDate WithCallback:(void(^)(BOOL SUCCESS))callback
 {
     if(aDate != nil)
@@ -91,7 +107,9 @@ static AppointmentManager* instance;
 {
     PFQuery* query = [PFQuery queryWithClassName:APPOINTMENT_CLASSNAME];
     [query whereKey:@"scheduledBy" equalTo:[PFUser objectWithoutDataWithObjectId:[PFUser currentUser].objectId]];
+    [query whereKey:@"onDate" greaterThanOrEqualTo:[[NSDate alloc]init]];
     [query orderByAscending:@"onDate"];
+    [query includeKey:@"forCompany"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         

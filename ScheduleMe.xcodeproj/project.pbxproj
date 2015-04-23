@@ -45,6 +45,7 @@
 		1A4001D31AC339C500B64BA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A4001D21AC339C500B64BA2 /* Images.xcassets */; };
 		1A4001D61AC339C500B64BA2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4001D41AC339C500B64BA2 /* LaunchScreen.xib */; };
 		1A4001E21AC339C500B64BA2 /* ScheduleMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4001E11AC339C500B64BA2 /* ScheduleMeTests.m */; };
+		1A5422481AE99008008A06EB /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5422471AE99008008A06EB /* Company.m */; };
 		1AB4F0161ACE1B4900E42B5D /* UserAppointmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4F0141ACE1B4900E42B5D /* UserAppointmentTableViewCell.m */; };
 		1AB4F0171ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4F0151ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib */; };
 		6C97E5021AC48FF300454832 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97E5011AC48FF300454832 /* AudioToolbox.framework */; };
@@ -133,6 +134,8 @@
 		1A4001DB1AC339C500B64BA2 /* ScheduleMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4001E01AC339C500B64BA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A4001E11AC339C500B64BA2 /* ScheduleMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScheduleMeTests.m; sourceTree = "<group>"; };
+		1A5422461AE99008008A06EB /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		1A5422471AE99008008A06EB /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		1AB4F0131ACE1B4900E42B5D /* UserAppointmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAppointmentTableViewCell.h; sourceTree = "<group>"; };
 		1AB4F0141ACE1B4900E42B5D /* UserAppointmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAppointmentTableViewCell.m; sourceTree = "<group>"; };
 		1AB4F0151ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAppointmentTableViewCell.xib; sourceTree = "<group>"; };
@@ -243,6 +246,8 @@
 			children = (
 				1A02DE441ACCCF3F007F7C74 /* Appointment.h */,
 				1A02DE451ACCCF3F007F7C74 /* Appointment.m */,
+				1A5422461AE99008008A06EB /* Company.h */,
+				1A5422471AE99008008A06EB /* Company.m */,
 				1A02DE401ACCCB01007F7C74 /* AppointmentManager.h */,
 				1A02DE411ACCCB01007F7C74 /* AppointmentManager.m */,
 			);
@@ -480,6 +485,7 @@
 				1A02DE461ACCCF3F007F7C74 /* Appointment.m in Sources */,
 				1A1DE78A1AC4E069006A431B /* TSQCalendarCell.m in Sources */,
 				1A02DE391ACCBB69007F7C74 /* CalendarViewController.m in Sources */,
+				1A5422481AE99008008A06EB /* Company.m in Sources */,
 				1A02DE421ACCCB01007F7C74 /* AppointmentManager.m in Sources */,
 				1A1DE78C1AC4E069006A431B /* TSQCalendarRowCell.m in Sources */,
 				1A02DE591ACCE52D007F7C74 /* AppointmentTableViewCell.m in Sources */,

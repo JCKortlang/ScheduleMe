@@ -14,43 +14,90 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S32-RM-jYU">
-                        <rect key="frame" x="8" y="9" width="257" height="25"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S32-RM-jYU">
+                        <rect key="frame" x="8" y="36" width="167" height="27"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFG-gb-eTX">
-                        <rect key="frame" x="273" y="8" width="70" height="54"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHs-aM-iea">
+                        <rect key="frame" x="183" y="36" width="160" height="27"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <state key="normal" title="Cancel">
-                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                        <connections>
-                            <action selector="cancelButton_OnTouchUp:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="d5Q-po-5sP"/>
-                        </connections>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHs-aM-iea">
-                        <rect key="frame" x="8" y="42" width="257" height="20"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Company" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQC-hk-e0T">
+                        <rect key="frame" x="8" y="8" width="335" height="27"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="CHs-aM-iea" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="0x4-9p-LxE"/>
                     <constraint firstItem="CHs-aM-iea" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1oq-kO-tDu"/>
-                    <constraint firstItem="vFG-gb-eTX" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="5UL-Jg-8ZG"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="CHs-aM-iea" secondAttribute="bottom" id="3IM-dW-5HX"/>
+                    <constraint firstItem="bQC-hk-e0T" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="59E-Gg-xzj"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="CHs-aM-iea" secondAttribute="bottom" constant="-1" id="8h0-6g-YMw"/>
+                    <constraint firstItem="CHs-aM-iea" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="B18-yW-lqU"/>
+                    <constraint firstAttribute="centerX" secondItem="CHs-aM-iea" secondAttribute="centerX" id="BnJ-O5-Qu4"/>
+                    <constraint firstAttribute="centerX" secondItem="CHs-aM-iea" secondAttribute="centerX" id="DdP-0x-iYz"/>
+                    <constraint firstItem="CHs-aM-iea" firstAttribute="leading" secondItem="S32-RM-jYU" secondAttribute="trailing" constant="8" id="DfH-Oo-Aof"/>
+                    <constraint firstAttribute="centerX" secondItem="S32-RM-jYU" secondAttribute="centerX" id="F9f-m2-Vdz"/>
+                    <constraint firstItem="S32-RM-jYU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Ghl-hP-en3"/>
+                    <constraint firstItem="CHs-aM-iea" firstAttribute="leading" secondItem="S32-RM-jYU" secondAttribute="trailing" constant="8" id="HDs-yK-Dw6"/>
+                    <constraint firstItem="S32-RM-jYU" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="HlW-dn-dPL"/>
+                    <constraint firstItem="CHs-aM-iea" firstAttribute="top" secondItem="S32-RM-jYU" secondAttribute="bottom" constant="7" id="QPR-E2-nNd"/>
+                    <constraint firstItem="CHs-aM-iea" firstAttribute="top" secondItem="S32-RM-jYU" secondAttribute="bottom" constant="7" id="Tti-NT-TsX"/>
+                    <constraint firstItem="S32-RM-jYU" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="UcK-ku-lEA"/>
+                    <constraint firstItem="S32-RM-jYU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Yqm-Yb-Gh6"/>
                     <constraint firstItem="S32-RM-jYU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ZNR-l0-o5g"/>
+                    <constraint firstItem="S32-RM-jYU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="a00-jO-gwb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="CHs-aM-iea" secondAttribute="bottom" constant="-1" id="aNN-55-0La"/>
+                    <constraint firstItem="S32-RM-jYU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="deS-fZ-4LW"/>
+                    <constraint firstItem="CHs-aM-iea" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="fhT-wH-3iD"/>
                     <constraint firstItem="CHs-aM-iea" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="iBW-c6-6zt"/>
+                    <constraint firstItem="CHs-aM-iea" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="jlZ-ob-98y"/>
+                    <constraint firstItem="bQC-hk-e0T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="mx8-fp-CsF"/>
+                    <constraint firstAttribute="centerX" secondItem="S32-RM-jYU" secondAttribute="centerX" id="nU7-Ws-B2t"/>
+                    <constraint firstItem="CHs-aM-iea" firstAttribute="leading" secondItem="S32-RM-jYU" secondAttribute="trailing" constant="8" id="o2L-Bm-iLu"/>
+                    <constraint firstItem="CHs-aM-iea" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="zLs-9x-eaz"/>
                     <constraint firstItem="S32-RM-jYU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="zkO-Iv-KHN"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="F9f-m2-Vdz"/>
+                        <exclude reference="Ghl-hP-en3"/>
+                        <exclude reference="UcK-ku-lEA"/>
+                        <exclude reference="Yqm-Yb-Gh6"/>
+                        <exclude reference="ZNR-l0-o5g"/>
+                        <exclude reference="a00-jO-gwb"/>
+                        <exclude reference="deS-fZ-4LW"/>
+                        <exclude reference="nU7-Ws-B2t"/>
+                        <exclude reference="zkO-Iv-KHN"/>
+                        <exclude reference="1oq-kO-tDu"/>
+                        <exclude reference="3IM-dW-5HX"/>
+                        <exclude reference="8h0-6g-YMw"/>
+                        <exclude reference="B18-yW-lqU"/>
+                        <exclude reference="BnJ-O5-Qu4"/>
+                        <exclude reference="DdP-0x-iYz"/>
+                        <exclude reference="DfH-Oo-Aof"/>
+                        <exclude reference="HDs-yK-Dw6"/>
+                        <exclude reference="QPR-E2-nNd"/>
+                        <exclude reference="Tti-NT-TsX"/>
+                        <exclude reference="aNN-55-0La"/>
+                        <exclude reference="fhT-wH-3iD"/>
+                        <exclude reference="iBW-c6-6zt"/>
+                        <exclude reference="zLs-9x-eaz"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="cancelButton" destination="vFG-gb-eTX" id="ezb-GM-G3d"/>
+                <outlet property="companyLabel" destination="bQC-hk-e0T" id="LL7-HB-eZ8"/>
                 <outlet property="dateLabel" destination="S32-RM-jYU" id="mdJ-7V-0q0"/>
                 <outlet property="timeLabel" destination="CHs-aM-iea" id="GRd-Jd-Cml"/>
             </connections>
-            <point key="canvasLocation" x="294.5" y="159"/>
+            <point key="canvasLocation" x="294.5" y="147"/>
         </tableViewCell>
     </objects>
 </document>

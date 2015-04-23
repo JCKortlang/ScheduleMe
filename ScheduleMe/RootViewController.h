@@ -15,6 +15,6 @@
 
 @import ParseUI;
 
-@interface RootViewController : UITableViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, loginProtocol, signUpProtocol, UITableViewDataSource, UITableViewDelegate, CancelAppointmentDelegate>
+@interface RootViewController : UITableViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, loginProtocol, signUpProtocol, UITableViewDataSource, UITableViewDelegate>
 @end
 
