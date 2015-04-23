@@ -27,6 +27,7 @@ extern long const TIMESLOT_COUNT;
 
 -(void)getAppointmentsForCurrentUserWithCallback:(void(^)(bool didSucceed))callback;
 -(void)cancelAppointment:(Appointment*)anAppointment WithCallback:(void(^)(bool didSucceed))callback;
--(bool)checkTimeslotAvailability:(NSNumber*) aTimeslot;
+-(bool)checkForAvailabilityOnDate:(NSDate*)aDate AndTimeslot:(NSNumber*) aTimeslot;
+-(bool)checkForConflictOnDate:(NSDate*)aDate AndTimeslot:(NSNumber*)aTimeslot;
 
 @end

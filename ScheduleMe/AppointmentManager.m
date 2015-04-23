@@ -159,17 +159,30 @@ static AppointmentManager* instance;
     }
 }
 
--(bool) checkTimeslotAvailability:(NSNumber*) aTimeslot
+-(bool)checkForAvailabilityOnDate:(NSDate*)aDate AndTimeslot:(NSNumber*) aTimeslot;
 {
-    bool result = true;
+    bool isAvailable = true;
     
-    for(int i = 0; i < self.appointments.count && result; i++)
+    for(int i = 0; i < self.appointments.count && isAvailable; i++)
     {
         Appointment* item = (Appointment*)[self.appointments objectAtIndex:i];
-        result = ![item.forTimeslot isEqualToNumber:aTimeslot];
+        isAvailable = [item.onDate isEqualToDate:aDate] && ![item.forTimeslot isEqualToNumber:aTimeslot];
     }
     
-    return result;
+    return isAvailable;
+}
+
+-(bool)checkForConflictOnDate:(NSDate*)aDate AndTimeslot:(NSNumber*)aTimeslot
+{
+    bool isAvailable = true;
+    
+    for (int i = 0; i < self.currentUsersAppointments.count && isAvailable; i++)
+    {
+        Appointment* item = (Appointment*)[self.currentUsersAppointments objectAtIndex:i];
+        isAvailable = [item.onDate isEqualToDate:aDate] && ![item.forTimeslot isEqualToNumber:aTimeslot];
+    }
+    
+    return isAvailable;
 }
 
 

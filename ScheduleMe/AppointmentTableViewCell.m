@@ -28,7 +28,6 @@ NSString* const APPOINTMENT_CELL_IDENTIFIER = @"AppointmentTableViewCell";
     {
         [self.reserveButton setHidden:true];
     }
-    // Configure the view for the selected state
 }
 
 - (IBAction)buttonClicked:(id)sender
@@ -37,6 +36,18 @@ NSString* const APPOINTMENT_CELL_IDENTIFIER = @"AppointmentTableViewCell";
     {
         [self.delegate reserveButtonClicked:self];
     }
+}
+
+-(void)setReservedStyle
+{
+    self.availableMessage.text = @"Reserved";
+    self.availableMessage.textColor = [[UIColor alloc] initWithRed:255 green:0 blue:0 alpha:1];
+}
+
+-(void)setConflictStyle
+{
+    self.availableMessage.text = @"Conflict";
+    self.availableMessage.textColor = [[UIColor alloc] initWithRed:255 green:0 blue:0 alpha:1];
 }
 
 @end

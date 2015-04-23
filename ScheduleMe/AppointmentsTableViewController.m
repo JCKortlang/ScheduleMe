@@ -88,12 +88,23 @@
     
     cell.delegate = self;
     cell.timeSlot = index;
-    cell.isAvailable = [[AppointmentManager getInstance] checkTimeslotAvailability:cell.timeSlot];
+    
+    // Checks if another user has schedule the appointment.
+    cell.isAvailable = [[AppointmentManager getInstance] checkForAvailabilityOnDate:self.selectedDate AndTimeslot:index];
     
     if (!cell.isAvailable)
     {
-        cell.availableMessage.text = @"Reserved";
-        cell.availableMessage.textColor = [[UIColor alloc] initWithRed:255 green:0 blue:0 alpha:1];
+        [cell setReservedStyle];
+    }
+    else
+    {
+        //Checks if the user has an appointment already with another company.
+        cell.isAvailable = [[AppointmentManager getInstance] checkForConflictOnDate:self.selectedDate AndTimeslot:index];
+        
+        if (!cell.isAvailable)
+        {
+            [cell setConflictStyle];
+        }
     }
     
     cell.time.text = [Appointment timeDescriptionFromStartingTime:self.firstAppointmentTime WithTimeslot:indexPath.row];
