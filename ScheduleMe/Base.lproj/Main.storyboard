@@ -36,6 +36,7 @@
                     <navigationItem key="navigationItem" id="liQ-M0-jgU"/>
                     <connections>
                         <segue destination="S3Q-7z-Wag" kind="show" identifier="CalendarSegue" id="Wds-HM-mvX"/>
+                        <segue destination="VDu-e6-HqD" kind="show" identifier="AppointmentDetailsSegue" id="I0M-hy-Jti"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bck-FR-FJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -161,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JP6-6f-tO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-141" y="1134"/>
+            <point key="canvasLocation" x="-259.5" y="1134"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="j3P-PW-FOJ">
@@ -236,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EgK-U9-Cd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-796.5" y="1134"/>
+            <point key="canvasLocation" x="-936" y="1134"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="08b-iW-xcu">
@@ -275,7 +276,60 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ov3-TL-0De" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="409"/>
+            <point key="canvasLocation" x="1303.5" y="409"/>
+        </scene>
+        <!--Appointment Details View Controller-->
+        <scene sceneID="XDH-gi-E7H">
+            <objects>
+                <viewController id="VDu-e6-HqD" customClass="AppointmentDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8JE-aV-stY"/>
+                        <viewControllerLayoutGuide type="bottom" id="dDy-9p-VOM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Qw-FZ-86u">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnQ-Df-g9x">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="114" width="368" height="34"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9d4-qB-rXp">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="72" width="368" height="34"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="RnQ-Df-g9x"/>
+                                <exclude reference="9d4-qB-rXp"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="RnQ-Df-g9x"/>
+                                <include reference="9d4-qB-rXp"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="companyLabel" destination="9d4-qB-rXp" id="cXc-UR-Cyt"/>
+                        <outlet property="datetimeLabel" destination="RnQ-Df-g9x" id="BYQ-0L-3AQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zoo-k4-qwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-168" y="-252"/>
         </scene>
     </scenes>
 </document>

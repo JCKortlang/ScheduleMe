@@ -56,7 +56,6 @@
         if (didSucceed)
         {
             self.data = [[AppointmentManager getInstance] currentUsersAppointments];
-            NSLog(self.data.description);
             [self.tableView reloadData];
         }
     }];
@@ -89,6 +88,15 @@
     }];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:APPOINTMENT_DETAILS_SEGUE])
+    {
+        AppointmentDetailsViewController* destinationViewController = segue.destinationViewController;
+        destinationViewController.selectedAppointment = (Appointment*)[self.data objectAtIndex:self.selectedIndex];
+    }
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.data != nil)
@@ -111,7 +119,8 @@
         
         cell.timeLabel.text = [Appointment timeDescriptionFromStartingTime:startTime WithTimeslot:timeSlot];
         cell.dateLabel.text = [Appointment dateOnlyDescriptionFromDate:appointment.onDate];
-        cell.companyLabel.text = appointment.forCompany != nil ? appointment.forCompany.name : @"";
+        cell.companyLabel.text = appointment.forCompany != nil ? appointment.forCompany.name : @"Unknown";
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
         
         return cell;
     }
@@ -138,6 +147,22 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.selectedIndex = indexPath.row;
+    
+    UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    [cell setAccessoryType:UITableViewCellAccessoryDetailButton];
+}
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    [cell setAccessoryType:UITableViewCellAccessoryNone];
+}
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:APPOINTMENT_DETAILS_SEGUE sender:self];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

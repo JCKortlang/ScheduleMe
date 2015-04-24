@@ -46,6 +46,7 @@
 		1A4001D61AC339C500B64BA2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4001D41AC339C500B64BA2 /* LaunchScreen.xib */; };
 		1A4001E21AC339C500B64BA2 /* ScheduleMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4001E11AC339C500B64BA2 /* ScheduleMeTests.m */; };
 		1A5422481AE99008008A06EB /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5422471AE99008008A06EB /* Company.m */; };
+		1A54224B1AE9B34C008A06EB /* AppointmentDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A54224A1AE9B34C008A06EB /* AppointmentDetailsViewController.m */; };
 		1AB4F0161ACE1B4900E42B5D /* UserAppointmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4F0141ACE1B4900E42B5D /* UserAppointmentTableViewCell.m */; };
 		1AB4F0171ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4F0151ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib */; };
 		6C97E5021AC48FF300454832 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97E5011AC48FF300454832 /* AudioToolbox.framework */; };
@@ -136,6 +137,8 @@
 		1A4001E11AC339C500B64BA2 /* ScheduleMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScheduleMeTests.m; sourceTree = "<group>"; };
 		1A5422461AE99008008A06EB /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
 		1A5422471AE99008008A06EB /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		1A5422491AE9B34C008A06EB /* AppointmentDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentDetailsViewController.h; sourceTree = "<group>"; };
+		1A54224A1AE9B34C008A06EB /* AppointmentDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentDetailsViewController.m; sourceTree = "<group>"; };
 		1AB4F0131ACE1B4900E42B5D /* UserAppointmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAppointmentTableViewCell.h; sourceTree = "<group>"; };
 		1AB4F0141ACE1B4900E42B5D /* UserAppointmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAppointmentTableViewCell.m; sourceTree = "<group>"; };
 		1AB4F0151ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAppointmentTableViewCell.xib; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 			children = (
 				1A02DE3A1ACCC5C8007F7C74 /* AppointmentsTableViewController.h */,
 				1A02DE3B1ACCC5C8007F7C74 /* AppointmentsTableViewController.m */,
+				1A5422491AE9B34C008A06EB /* AppointmentDetailsViewController.h */,
+				1A54224A1AE9B34C008A06EB /* AppointmentDetailsViewController.m */,
 				1A02DE371ACCBB69007F7C74 /* CalendarViewController.h */,
 				1A02DE381ACCBB69007F7C74 /* CalendarViewController.m */,
 				1A4001CC1AC339C500B64BA2 /* RootViewController.h */,
@@ -495,6 +500,7 @@
 				6CB9B3CC1ACB3F85009FE5AB /* LogInViewController.m in Sources */,
 				1A1DE78F1AC4E069006A431B /* TSQTACalendarRowCell.m in Sources */,
 				1A1DE7901AC4E069006A431B /* TSQTAViewController.m in Sources */,
+				1A54224B1AE9B34C008A06EB /* AppointmentDetailsViewController.m in Sources */,
 				1A1DE78B1AC4E069006A431B /* TSQCalendarMonthHeaderCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
