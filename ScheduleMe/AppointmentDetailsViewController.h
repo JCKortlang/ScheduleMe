@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import <CoreLocation/CLGeocoder.h>
+#import <CoreLocation/CLLocationManager.h>
+#import <AddressBookUI/AddressBookUI.h>
 
 #import "Appointment.h"
 

@@ -19,6 +19,9 @@ NSString* const APPOINTMENT_DETAILS_SEGUE = @"AppointmentDetailsSegue";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self reverseGeocodeAppointmentLocation];
+    
     // Do any additional setup after loading the view.
     [self navigationItem].title = @"Appointment Details";
     self.companyLabel.text = [NSString stringWithFormat:@"With %@",self.selectedAppointment.forCompany.name];
@@ -59,6 +62,29 @@ NSString* const APPOINTMENT_DETAILS_SEGUE = @"AppointmentDetailsSegue";
     region.span = span;
     
     [self.mapView setRegion:region animated:animated];
+}
+
+-(void)reverseGeocodeAppointmentLocation
+{
+    CLGeocoder* geocoder = [[CLGeocoder alloc] init];
+    
+    CLLocationDegrees latitude = self.selectedAppointment.forCompany.location.latitude;
+    CLLocationDegrees longitude = self.selectedAppointment.forCompany.location.longitude;
+    
+    CLLocation* location = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+    
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        
+        if (error == nil && placemarks != nil && placemarks.count > 0)
+        {
+            CLPlacemark* placemark = (CLPlacemark*)placemarks[0];
+            
+            NSString* address = ABCreateStringWithAddressDictionary(placemark.addressDictionary, YES);
+            
+            self.addressLabel.text = address;
+        }
+        
+    }];
 }
 
 
