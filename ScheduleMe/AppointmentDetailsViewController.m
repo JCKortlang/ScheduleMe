@@ -30,22 +30,35 @@ NSString* const APPOINTMENT_DETAILS_SEGUE = @"AppointmentDetailsSegue";
     
     [self.mapView addAnnotation:self.selectedAppointment];
     
-    MKCoordinateSpan span;
-    span.latitudeDelta = .003;
-    span.longitudeDelta = .003;
-    
-    MKCoordinateRegion region;
-    region.center = self.selectedAppointment.coordinate;
-    region.span = span;
-    
-    self.mapView.region = region;
-    
+    // We add an initial region in order to have a propery animation effect.
+    [self setMapViewRegionWithLatitiudeDelta:2 AndLongitudeDelta:2 WithAnimation:false];
+}
+
+-(void)mapViewDidFinishRenderingMap:(MKMapView *)mapView fullyRendered:(BOOL)fullyRendered
+{
+    if(fullyRendered)
+    {
+        [self setMapViewRegionWithLatitiudeDelta:.003 AndLongitudeDelta:.003 WithAnimation:fullyRendered];
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)setMapViewRegionWithLatitiudeDelta:(float)aLatitude AndLongitudeDelta:(float)aLongitude WithAnimation:(bool)animated
+{
+    MKCoordinateSpan span;
+    span.latitudeDelta = aLatitude;
+    span.longitudeDelta = aLongitude;
+    
+    MKCoordinateRegion region;
+    region.center = self.selectedAppointment.coordinate;
+    region.span = span;
+    
+    [self.mapView setRegion:region animated:animated];
 }
 
 

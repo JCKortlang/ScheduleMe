@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CLGeocoder.h>
+
 #import "Appointment.h"
 
 extern NSString* const APPOINTMENT_DETAILS_SEGUE;
