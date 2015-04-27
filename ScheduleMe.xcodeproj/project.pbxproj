@@ -49,6 +49,7 @@
 		1A54224B1AE9B34C008A06EB /* AppointmentDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A54224A1AE9B34C008A06EB /* AppointmentDetailsViewController.m */; };
 		1AB4F0161ACE1B4900E42B5D /* UserAppointmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4F0141ACE1B4900E42B5D /* UserAppointmentTableViewCell.m */; };
 		1AB4F0171ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4F0151ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib */; };
+		1AFA32E81AEEAAEB00070A34 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFA32E71AEEAAEB00070A34 /* MapKit.framework */; };
 		6C97E5021AC48FF300454832 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97E5011AC48FF300454832 /* AudioToolbox.framework */; };
 		6C97E5041AC48FFC00454832 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97E5031AC48FFC00454832 /* CFNetwork.framework */; };
 		6C97E5061AC4900900454832 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97E5051AC4900900454832 /* CoreGraphics.framework */; };
@@ -142,6 +143,7 @@
 		1AB4F0131ACE1B4900E42B5D /* UserAppointmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAppointmentTableViewCell.h; sourceTree = "<group>"; };
 		1AB4F0141ACE1B4900E42B5D /* UserAppointmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAppointmentTableViewCell.m; sourceTree = "<group>"; };
 		1AB4F0151ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAppointmentTableViewCell.xib; sourceTree = "<group>"; };
+		1AFA32E71AEEAAEB00070A34 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6C97E5011AC48FF300454832 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		6C97E5031AC48FFC00454832 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6C97E5051AC4900900454832 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -171,6 +173,7 @@
 				6C97E56A1AC49E9B00454832 /* Accounts.framework in Frameworks */,
 				1A02DE551ACCE3E3007F7C74 /* ParseUI.framework in Frameworks */,
 				1A02DE541ACCE3E3007F7C74 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				1AFA32E81AEEAAEB00070A34 /* MapKit.framework in Frameworks */,
 				1A02DE531ACCE3E3007F7C74 /* ParseFacebookUtils.framework in Frameworks */,
 				6C97E5681AC49E4400454832 /* Social.framework in Frameworks */,
 				1A02DE521ACCE3E3007F7C74 /* ParseCrashReporting.framework in Frameworks */,
@@ -203,6 +206,7 @@
 		1A0274B61AC4BA3200C512F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AFA32E71AEEAAEB00070A34 /* MapKit.framework */,
 				1A02DE4A1ACCE3E3007F7C74 /* Bolts.framework */,
 				1A02DE4B1ACCE3E3007F7C74 /* Parse.framework */,
 				1A02DE4C1ACCE3E3007F7C74 /* ParseCrashReporting.framework */,
@@ -417,6 +421,11 @@
 				TargetAttributes = {
 					1A4001C11AC339C500B64BA2 = {
 						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					1A4001DA1AC339C500B64BA2 = {
 						CreatedOnToolsVersion = 6.1.1;

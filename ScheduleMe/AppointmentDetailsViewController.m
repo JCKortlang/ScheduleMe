@@ -21,8 +21,25 @@ NSString* const APPOINTMENT_DETAILS_SEGUE = @"AppointmentDetailsSegue";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self navigationItem].title = @"Appointment Details";
-    self.companyLabel.text = self.selectedAppointment.forCompany.name;
-    self.datetimeLabel.text = [Appointment dateOnlyDescriptionFromDate:self.selectedAppointment.onDate];
+    self.companyLabel.text = [NSString stringWithFormat:@"With %@",self.selectedAppointment.forCompany.name];
+    self.dateLabel.text = [NSString stringWithFormat:@"On %@ at %@", [Appointment dateOnlyDescriptionFromDate:self.selectedAppointment.onDate], [Appointment timeDescriptionFromStartingTime:9 WithTimeslot:[self.selectedAppointment.forTimeslot longValue]]];
+    
+    float latitude = self.selectedAppointment.forCompany.location.latitude;
+    float longitude = self.selectedAppointment.forCompany.location.longitude;
+    self.addressLabel.text = [NSString stringWithFormat:@"Address: (%.6f,%.6f)", latitude, longitude];
+    
+    [self.mapView addAnnotation:self.selectedAppointment];
+    
+    MKCoordinateSpan span;
+    span.latitudeDelta = .003;
+    span.longitudeDelta = .003;
+    
+    MKCoordinateRegion region;
+    region.center = self.selectedAppointment.coordinate;
+    region.span = span;
+    
+    self.mapView.region = region;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,6 +47,7 @@ NSString* const APPOINTMENT_DETAILS_SEGUE = @"AppointmentDetailsSegue";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation

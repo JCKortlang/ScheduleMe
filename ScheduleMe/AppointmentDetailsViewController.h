@@ -15,7 +15,9 @@ extern NSString* const APPOINTMENT_DETAILS_SEGUE;
 @interface AppointmentDetailsViewController : UIViewController <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *companyLabel;
-@property (weak, nonatomic) IBOutlet UILabel *datetimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @property Appointment* selectedAppointment;

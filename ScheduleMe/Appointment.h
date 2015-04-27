@@ -8,10 +8,11 @@
 
 #import <Parse/Parse.h>
 #import "Company.h"
+#import <MapKit/MKAnnotation.h>
 
 extern NSString* const APPOINTMENT_CLASSNAME;
 
-@interface Appointment : PFObject <PFSubclassing>
+@interface Appointment : PFObject <PFSubclassing, MKAnnotation>
 
 @property (nonatomic, strong) PFUser* scheduledBy;
 @property (nonatomic, strong) NSDate* onDate;
@@ -20,5 +21,12 @@ extern NSString* const APPOINTMENT_CLASSNAME;
 
 +(NSString*)timeDescriptionFromStartingTime:(long)hourOfDay WithTimeslot:(long)aTimeslot;
 +(NSString*)dateOnlyDescriptionFromDate:(NSDate*)aDate;
+
+//MKAnnotation Protocol
+@property(nonatomic, readonly, copy) NSString *subtitle;
+@property(nonatomic, readonly, copy) NSString *title;
+@property(nonatomic, readonly) CLLocationCoordinate2D coordinate;
+-(void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
+
 
 @end

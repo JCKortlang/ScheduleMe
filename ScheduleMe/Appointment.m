@@ -17,6 +17,25 @@ NSString* const APPOINTMENT_CLASSNAME = @"Appointment";
 @dynamic onDate;
 @dynamic forCompany;
 
+-(CLLocationCoordinate2D) coordinate
+{
+    CLLocationCoordinate2D _coordinate;
+    _coordinate.latitude = self.forCompany.location.latitude;
+    _coordinate.longitude = self.forCompany.location.longitude;
+    return _coordinate;
+}
+
+-(NSString*) title
+{
+    return self.forCompany.name;
+}
+
+-(NSString*) subtitle
+{
+    return [NSString stringWithFormat:@"On %@ at %@", [Appointment dateOnlyDescriptionFromDate:self.onDate],[Appointment timeDescriptionFromStartingTime:9 WithTimeslot:[self.forTimeslot longValue]]];
+}
+
+
 +(void)load
 {
     [self registerSubclass];
@@ -46,6 +65,13 @@ NSString* const APPOINTMENT_CLASSNAME = @"Appointment";
     formatter.timeStyle = NSDateFormatterNoStyle;
     formatter.dateStyle = NSDateFormatterFullStyle;
     return [formatter stringFromDate:aDate];
+}
+
+//MKAnnotation
+-(void)setCoordinate:(CLLocationCoordinate2D)newCoordinate
+{
+    self.forCompany.location.latitude = newCoordinate.latitude;
+    self.forCompany.location.longitude = newCoordinate.longitude;
 }
 
 @end
