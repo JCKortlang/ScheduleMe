@@ -20,6 +20,44 @@
     
 }
 
+//MINIMIZES KEYBOARD ON RETURN KEY
+-(IBAction)textFieldReturn:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
+//MINIMIZEs KEYBOARD WHEN BACKGROUND IS TOUCHED
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event allTouches] anyObject];
+    //USERNAME
+    if ([self.UserNameField isFirstResponder] && [touch view] != self.UserNameField) {
+        [self.UserNameField resignFirstResponder];
+    }
+    //PASSWORD
+    if ([self.PasswordField isFirstResponder] && [touch view] != self.PasswordField) {
+        [self.PasswordField resignFirstResponder];
+    }
+    //E-MAIL
+    if ([self.EmailField isFirstResponder] && [touch view] != self.EmailField) {
+        [self.EmailField resignFirstResponder];
+    }
+    //FIRSTNAME
+    if ([self.FirstNameField isFirstResponder] && [touch view] != self.FirstNameField) {
+        [self.FirstNameField resignFirstResponder];
+    }
+    //LASTNAME
+    if ([self.LastNameField isFirstResponder] && [touch view] != self.LastNameField) {
+        [self.LastNameField resignFirstResponder];
+    }
+    //ORGANIZATION
+    if ([self.CompanyField isFirstResponder] && [touch view] != self.CompanyField) {
+        [self.CompanyField resignFirstResponder];
+    }
+    
+    [super touchesBegan:touches withEvent:event];
+}
+
 
 - (IBAction)UserCreationConfirmed:(id)sender {
     

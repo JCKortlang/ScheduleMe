@@ -36,6 +36,8 @@
     logoutButton.title = @"Logout";
     [logoutButton setTarget:self];
     [logoutButton setAction:@selector(logoutButtonClicked)];
+    
+    
 
     [[self navigationItem] setLeftBarButtonItem:logoutButton];
     

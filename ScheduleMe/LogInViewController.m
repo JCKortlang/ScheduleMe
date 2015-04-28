@@ -19,6 +19,25 @@
     [self logUserIn];
 }
 
+//MINIMIZES KEYBOARD ON RETURN KEY
+-(IBAction)textFieldReturn:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
+//SHOULD MINIMIZE KEYBOARD WHEN BACKGROUND IS TOUCHED
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([self.LogInUsernameField isFirstResponder] && [touch view] != self.LogInUsernameField) {
+        [self.LogInUsernameField resignFirstResponder];
+    }
+    if ([self.LogInPasswordField isFirstResponder] && [touch view] != self.LogInPasswordField) {
+        [self.LogInPasswordField resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
+}
+
 //try to log the user in and let the delegate know about the results
 -(void)logUserIn
 {

@@ -73,6 +73,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="100" y="122" width="200" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="lTe-O7-Agq" eventType="editingDidEndOnExit" id="Rfp-pp-kAf"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hN-43-NJm">
                                 <rect key="frame" x="321" y="185" width="97" height="30"/>
@@ -81,6 +84,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="100" y="160" width="200" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="lTe-O7-Agq" eventType="editingDidEndOnExit" id="ehf-81-D3w"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LmG-NF-PDz">
                                 <rect key="frame" x="182" y="185" width="97" height="30"/>
@@ -89,6 +95,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="100" y="198" width="200" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="lTe-O7-Agq" eventType="editingDidEndOnExit" id="Agc-ok-3w2"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="53X-I8-mYR">
                                 <rect key="frame" x="182" y="242" width="97" height="30"/>
@@ -97,6 +106,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="100" y="236" width="200" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="lTe-O7-Agq" eventType="editingDidEndOnExit" id="Kk6-hl-L8y"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Organization" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-Hh-43t">
                                 <rect key="frame" x="321" y="242" width="97" height="30"/>
@@ -105,6 +117,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="100" y="279" width="200" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="lTe-O7-Agq" eventType="editingDidEndOnExit" id="3a0-ia-KLU"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyQ-qh-IUr">
                                 <rect key="frame" x="204" y="373" width="193" height="30"/>
@@ -125,6 +140,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="100" y="84" width="200" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="lTe-O7-Agq" eventType="editingDidEndOnExit" id="h7H-sl-AN4"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pg-pO-I9X">
                                 <rect key="frame" x="259" y="306" width="82" height="30"/>
@@ -166,6 +184,136 @@
             </objects>
             <point key="canvasLocation" x="-259.5" y="1134"/>
         </scene>
+        <!--Appointment Details View Controller-->
+        <scene sceneID="uko-CT-xfA">
+            <objects>
+                <viewController id="9wW-KH-A9b" customClass="AppointmentDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GBF-t2-TcN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hah-Xn-z2C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wr3-rJ-Znm">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hwF-rx-bPO">
+                                <rect key="frame" x="252" y="122" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="126" width="200" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7jc-q2-2qO">
+                                <rect key="frame" x="321" y="185" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="164" width="200" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcf-TM-bru">
+                                <rect key="frame" x="182" y="185" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="202" width="200" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOk-QF-cl0">
+                                <rect key="frame" x="182" y="242" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="240" width="200" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Organization" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGD-5M-8YD">
+                                <rect key="frame" x="321" y="242" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="283" width="200" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WB9-kS-ac9">
+                                <rect key="frame" x="252" y="66" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="88" width="200" height="30"/>
+                                </variation>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Account Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alv-UZ-p9t">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="105" y="46" width="190" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VId-eh-0fv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Submit Changes">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="139" y="338" width="122" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7H-wa-dxh">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="173" y="389" width="54" height="30"/>
+                                </variation>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="09p-Y8-Tzq">
+                                <rect key="frame" x="252" y="66" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="88" width="200" height="30"/>
+                                </variation>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="hwF-rx-bPO"/>
+                                <exclude reference="7jc-q2-2qO"/>
+                                <exclude reference="dcf-TM-bru"/>
+                                <exclude reference="eOk-QF-cl0"/>
+                                <exclude reference="xGD-5M-8YD"/>
+                                <exclude reference="WB9-kS-ac9"/>
+                                <exclude reference="alv-UZ-p9t"/>
+                                <exclude reference="VId-eh-0fv"/>
+                                <exclude reference="y7H-wa-dxh"/>
+                                <exclude reference="09p-Y8-Tzq"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="hwF-rx-bPO"/>
+                                <include reference="7jc-q2-2qO"/>
+                                <include reference="dcf-TM-bru"/>
+                                <include reference="eOk-QF-cl0"/>
+                                <include reference="xGD-5M-8YD"/>
+                                <include reference="WB9-kS-ac9"/>
+                                <include reference="alv-UZ-p9t"/>
+                                <include reference="VId-eh-0fv"/>
+                                <include reference="y7H-wa-dxh"/>
+                                <include reference="09p-Y8-Tzq"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pnf-sP-UuS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="576" y="1134"/>
+        </scene>
         <!--Log In View Controller-->
         <scene sceneID="j3P-PW-FOJ">
             <objects>
@@ -194,6 +342,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="100" y="171" width="200" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="5m3-OJ-kb2" eventType="editingDidEndOnExit" id="ILV-Xq-x5A"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MoM-Vr-9RV">
                                 <rect key="frame" x="252" y="148" width="97" height="30"/>
@@ -202,6 +353,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="100" y="209" width="200" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="5m3-OJ-kb2" eventType="editingDidEndOnExit" id="K84-LB-Cpg"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QA6-vO-eFX">
                                 <rect key="frame" x="268" y="196" width="64" height="30"/>
@@ -297,18 +451,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="115" width="368" height="35"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comany Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9d4-qB-rXp">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="72" width="368" height="35"/>
-                                </variation>
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0N4-vb-ZnN">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -329,8 +477,7 @@
                                         <exclude reference="d16-Rd-tAx"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="158" width="368" height="160"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="d16-Rd-tAx"/>
                                     </mask>
@@ -341,9 +488,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="326" width="368" height="35"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -421,6 +565,25 @@
                                 <exclude reference="gl8-LL-2NW"/>
                                 <exclude reference="w2i-US-6Fu"/>
                                 <exclude reference="ykK-KU-250"/>
+                                <exclude reference="CQ4-7s-6wB"/>
+                                <exclude reference="DXr-AZ-sML"/>
+                                <exclude reference="DZp-Am-4Cr"/>
+                                <exclude reference="XVy-Mt-hht"/>
+                                <exclude reference="bUP-Vr-Nv6"/>
+                                <exclude reference="jZJ-AA-jo1"/>
+                                <exclude reference="rQW-yN-fFE"/>
+                                <exclude reference="0ue-bS-36M"/>
+                                <exclude reference="1wn-C2-DeT"/>
+                                <exclude reference="DcA-9L-Pe6"/>
+                                <exclude reference="E0q-QP-989"/>
+                                <exclude reference="J7N-RZ-BRm"/>
+                                <exclude reference="PXq-Lo-D5F"/>
+                                <exclude reference="RbE-Ri-0yk"/>
+                                <exclude reference="Wer-du-w3J"/>
+                                <exclude reference="ZBs-f1-aQt"/>
+                                <exclude reference="kTY-e4-yDv"/>
+                                <exclude reference="pHz-vG-ubo"/>
+                                <exclude reference="rSd-sV-ddJ"/>
                                 <exclude reference="6dT-AY-7Kd"/>
                                 <exclude reference="7sg-gz-LuM"/>
                                 <exclude reference="AN1-KS-CGw"/>
@@ -436,25 +599,6 @@
                                 <exclude reference="qbj-2Q-TTZ"/>
                                 <exclude reference="t9x-Ep-0DL"/>
                                 <exclude reference="zYG-fG-iYR"/>
-                                <exclude reference="0ue-bS-36M"/>
-                                <exclude reference="1wn-C2-DeT"/>
-                                <exclude reference="DcA-9L-Pe6"/>
-                                <exclude reference="E0q-QP-989"/>
-                                <exclude reference="J7N-RZ-BRm"/>
-                                <exclude reference="PXq-Lo-D5F"/>
-                                <exclude reference="RbE-Ri-0yk"/>
-                                <exclude reference="Wer-du-w3J"/>
-                                <exclude reference="ZBs-f1-aQt"/>
-                                <exclude reference="kTY-e4-yDv"/>
-                                <exclude reference="pHz-vG-ubo"/>
-                                <exclude reference="rSd-sV-ddJ"/>
-                                <exclude reference="CQ4-7s-6wB"/>
-                                <exclude reference="DXr-AZ-sML"/>
-                                <exclude reference="DZp-Am-4Cr"/>
-                                <exclude reference="XVy-Mt-hht"/>
-                                <exclude reference="bUP-Vr-Nv6"/>
-                                <exclude reference="jZJ-AA-jo1"/>
-                                <exclude reference="rQW-yN-fFE"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -480,6 +624,25 @@
                                 <exclude reference="gl8-LL-2NW"/>
                                 <exclude reference="w2i-US-6Fu"/>
                                 <exclude reference="ykK-KU-250"/>
+                                <exclude reference="CQ4-7s-6wB"/>
+                                <exclude reference="DXr-AZ-sML"/>
+                                <exclude reference="DZp-Am-4Cr"/>
+                                <exclude reference="XVy-Mt-hht"/>
+                                <include reference="bUP-Vr-Nv6"/>
+                                <exclude reference="jZJ-AA-jo1"/>
+                                <exclude reference="rQW-yN-fFE"/>
+                                <exclude reference="0ue-bS-36M"/>
+                                <exclude reference="1wn-C2-DeT"/>
+                                <include reference="DcA-9L-Pe6"/>
+                                <exclude reference="E0q-QP-989"/>
+                                <exclude reference="J7N-RZ-BRm"/>
+                                <exclude reference="PXq-Lo-D5F"/>
+                                <exclude reference="RbE-Ri-0yk"/>
+                                <exclude reference="Wer-du-w3J"/>
+                                <exclude reference="ZBs-f1-aQt"/>
+                                <include reference="kTY-e4-yDv"/>
+                                <exclude reference="pHz-vG-ubo"/>
+                                <include reference="rSd-sV-ddJ"/>
                                 <include reference="6dT-AY-7Kd"/>
                                 <include reference="7sg-gz-LuM"/>
                                 <exclude reference="AN1-KS-CGw"/>
@@ -495,25 +658,6 @@
                                 <exclude reference="qbj-2Q-TTZ"/>
                                 <exclude reference="t9x-Ep-0DL"/>
                                 <exclude reference="zYG-fG-iYR"/>
-                                <exclude reference="0ue-bS-36M"/>
-                                <exclude reference="1wn-C2-DeT"/>
-                                <include reference="DcA-9L-Pe6"/>
-                                <exclude reference="E0q-QP-989"/>
-                                <exclude reference="J7N-RZ-BRm"/>
-                                <exclude reference="PXq-Lo-D5F"/>
-                                <exclude reference="RbE-Ri-0yk"/>
-                                <exclude reference="Wer-du-w3J"/>
-                                <exclude reference="ZBs-f1-aQt"/>
-                                <include reference="kTY-e4-yDv"/>
-                                <exclude reference="pHz-vG-ubo"/>
-                                <include reference="rSd-sV-ddJ"/>
-                                <exclude reference="CQ4-7s-6wB"/>
-                                <exclude reference="DXr-AZ-sML"/>
-                                <exclude reference="DZp-Am-4Cr"/>
-                                <exclude reference="XVy-Mt-hht"/>
-                                <include reference="bUP-Vr-Nv6"/>
-                                <exclude reference="jZJ-AA-jo1"/>
-                                <exclude reference="rQW-yN-fFE"/>
                             </mask>
                         </variation>
                     </view>

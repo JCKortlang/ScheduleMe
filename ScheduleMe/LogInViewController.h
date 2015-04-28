@@ -18,9 +18,11 @@
 
 @optional
 
-//methods FINISH THIS
+
 -(void)LogInDelegateMethod:(LogInViewController *) sender;
 
+//to dismiss the keyboard
+-(IBAction)textFieldReturn:(id)sender;
 
 
 @end

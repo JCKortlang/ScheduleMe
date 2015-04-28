@@ -66,6 +66,7 @@
 		6C97E56A1AC49E9B00454832 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C97E5691AC49E9B00454832 /* Accounts.framework */; };
 		6CB9B3C91ACB3007009FE5AB /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB9B3C81ACB3007009FE5AB /* SignUpViewController.m */; };
 		6CB9B3CC1ACB3F85009FE5AB /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB9B3CB1ACB3F85009FE5AB /* LogInViewController.m */; };
+		C117B11D1AF0107D0043EFAF /* AccountDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C117B11C1AF0107D0043EFAF /* AccountDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,8 @@
 		6CB9B3C81ACB3007009FE5AB /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		6CB9B3CA1ACB3F85009FE5AB /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		6CB9B3CB1ACB3F85009FE5AB /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		C117B11B1AF0107D0043EFAF /* AccountDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountDetailsViewController.h; sourceTree = "<group>"; };
+		C117B11C1AF0107D0043EFAF /* AccountDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +237,8 @@
 		1A02DE3F1ACCC6C2007F7C74 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C117B11B1AF0107D0043EFAF /* AccountDetailsViewController.h */,
+				C117B11C1AF0107D0043EFAF /* AccountDetailsViewController.m */,
 				1A02DE3A1ACCC5C8007F7C74 /* AppointmentsTableViewController.h */,
 				1A02DE3B1ACCC5C8007F7C74 /* AppointmentsTableViewController.m */,
 				1A5422491AE9B34C008A06EB /* AppointmentDetailsViewController.h */,
@@ -503,6 +508,7 @@
 				1A02DE421ACCCB01007F7C74 /* AppointmentManager.m in Sources */,
 				1A1DE78C1AC4E069006A431B /* TSQCalendarRowCell.m in Sources */,
 				1A02DE591ACCE52D007F7C74 /* AppointmentTableViewCell.m in Sources */,
+				C117B11D1AF0107D0043EFAF /* AccountDetailsViewController.m in Sources */,
 				1A02DE3D1ACCC5C8007F7C74 /* AppointmentsTableViewController.m in Sources */,
 				1A4001C81AC339C500B64BA2 /* main.m in Sources */,
 				6CB9B3C91ACB3007009FE5AB /* SignUpViewController.m in Sources */,
