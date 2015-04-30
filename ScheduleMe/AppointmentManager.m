@@ -179,7 +179,7 @@ static AppointmentManager* instance;
     for (int i = 0; i < self.currentUsersAppointments.count && isAvailable; i++)
     {
         Appointment* item = (Appointment*)[self.currentUsersAppointments objectAtIndex:i];
-        isAvailable = [item.onDate isEqualToDate:aDate] && ![item.forTimeslot isEqualToNumber:aTimeslot];
+        isAvailable = ![item.onDate isEqualToDate:aDate] || ([item.onDate isEqualToDate:aDate] && ![item.forTimeslot isEqualToNumber:aTimeslot]);
     }
     
     return isAvailable;

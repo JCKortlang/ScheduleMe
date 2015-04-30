@@ -49,14 +49,6 @@
         }
         
     }];
-    
-//    [[AppointmentManager getInstance] scheduleAppointmentOn:self.selectedDate ForTimeslot:self.selectedIndex WithCallback:^(bool success) {
-//        if(success)
-//        {
-//            //Inefficient.
-//            [self.tableView reloadData];
-//        }
-//    }];
 }
 
 #pragma mark - Table view data source
