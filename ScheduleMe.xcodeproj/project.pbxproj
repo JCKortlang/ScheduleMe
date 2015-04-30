@@ -47,6 +47,7 @@
 		1A4001E21AC339C500B64BA2 /* ScheduleMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4001E11AC339C500B64BA2 /* ScheduleMeTests.m */; };
 		1A5422481AE99008008A06EB /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5422471AE99008008A06EB /* Company.m */; };
 		1A54224B1AE9B34C008A06EB /* AppointmentDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A54224A1AE9B34C008A06EB /* AppointmentDetailsViewController.m */; };
+		1A8BFCAF1AF2B0CD00B285B0 /* HD3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1A8BFCAE1AF2B0CD00B285B0 /* HD3.jpg */; };
 		1AB4F0161ACE1B4900E42B5D /* UserAppointmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4F0141ACE1B4900E42B5D /* UserAppointmentTableViewCell.m */; };
 		1AB4F0171ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB4F0151ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib */; };
 		1AFA32E81AEEAAEB00070A34 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFA32E71AEEAAEB00070A34 /* MapKit.framework */; };
@@ -141,6 +142,7 @@
 		1A5422471AE99008008A06EB /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		1A5422491AE9B34C008A06EB /* AppointmentDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentDetailsViewController.h; sourceTree = "<group>"; };
 		1A54224A1AE9B34C008A06EB /* AppointmentDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentDetailsViewController.m; sourceTree = "<group>"; };
+		1A8BFCAE1AF2B0CD00B285B0 /* HD3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HD3.jpg; sourceTree = "<group>"; };
 		1AB4F0131ACE1B4900E42B5D /* UserAppointmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAppointmentTableViewCell.h; sourceTree = "<group>"; };
 		1AB4F0141ACE1B4900E42B5D /* UserAppointmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAppointmentTableViewCell.m; sourceTree = "<group>"; };
 		1AB4F0151ACE1B4900E42B5D /* UserAppointmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAppointmentTableViewCell.xib; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 		1A4001C51AC339C500B64BA2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1A8BFCAE1AF2B0CD00B285B0 /* HD3.jpg */,
 				1A4001C61AC339C500B64BA2 /* Info.plist */,
 				1A4001C71AC339C500B64BA2 /* main.m */,
 			);
@@ -474,6 +477,7 @@
 				1A1DE77E1AC4E069006A431B /* CalendarPreviousMonth@2x.png in Resources */,
 				1A1DE7801AC4E069006A431B /* CalendarRow@2x.png in Resources */,
 				1A1DE7841AC4E069006A431B /* CalendarSelectedDate@2x.png in Resources */,
+				1A8BFCAF1AF2B0CD00B285B0 /* HD3.jpg in Resources */,
 				1A1DE7861AC4E069006A431B /* CalendarTodaysDate@2x.png in Resources */,
 				1A4001D61AC339C500B64BA2 /* LaunchScreen.xib in Resources */,
 				1A02DE5A1ACCE52D007F7C74 /* AppointmentTableViewCell.xib in Resources */,
