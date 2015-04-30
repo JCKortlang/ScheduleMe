@@ -50,7 +50,7 @@
     }
     
     else{
-        NSLog(@"The login failed ...?");
+        NSLog(@"The login failed");
     }
 }
 @end

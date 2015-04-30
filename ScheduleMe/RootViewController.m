@@ -37,7 +37,7 @@
     [logoutButton setTarget:self];
     [logoutButton setAction:@selector(logoutButtonClicked)];
     
-    
+    //[[self navigationItem] set
 
     [[self navigationItem] setLeftBarButtonItem:logoutButton];
     

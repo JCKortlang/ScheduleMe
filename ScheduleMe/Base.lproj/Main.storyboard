@@ -30,6 +30,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="y2U-Dv-lej">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Change Account Details" id="Vhi-Wq-TsF">
+                                    <connections>
+                                        <segue destination="9wW-KH-A9b" kind="show" id="O8n-TY-Drv"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
                         <connections>
                             <outlet property="dataSource" destination="aVs-la-v11" id="dUf-0u-26b"/>
                             <outlet property="delegate" destination="aVs-la-v11" id="9JZ-N1-lQg"/>
@@ -43,7 +54,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bck-FR-FJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-168" y="409"/>
+            <point key="canvasLocation" x="-172.5" y="409"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="WRC-d4-aRy">
@@ -184,10 +195,10 @@
             </objects>
             <point key="canvasLocation" x="-259.5" y="1134"/>
         </scene>
-        <!--Appointment Details View Controller-->
+        <!--Account Details View Controller-->
         <scene sceneID="uko-CT-xfA">
             <objects>
-                <viewController id="9wW-KH-A9b" customClass="AppointmentDetailsViewController" sceneMemberID="viewController">
+                <viewController id="9wW-KH-A9b" customClass="AccountDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GBF-t2-TcN"/>
                         <viewControllerLayoutGuide type="bottom" id="Hah-Xn-z2C"/>
@@ -244,15 +255,6 @@
                                     <rect key="frame" x="100" y="88" width="200" height="30"/>
                                 </variation>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Account Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alv-UZ-p9t">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="105" y="46" width="190" height="21"/>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VId-eh-0fv">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Submit Changes">
@@ -261,15 +263,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="139" y="338" width="122" height="30"/>
                                 </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7H-wa-dxh">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="173" y="389" width="54" height="30"/>
-                                </variation>
+                                <connections>
+                                    <action selector="submitChangesClicked:" destination="9wW-KH-A9b" eventType="touchUpInside" id="ziS-10-b04"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="09p-Y8-Tzq">
                                 <rect key="frame" x="252" y="66" width="97" height="30"/>
@@ -289,9 +285,7 @@
                                 <exclude reference="eOk-QF-cl0"/>
                                 <exclude reference="xGD-5M-8YD"/>
                                 <exclude reference="WB9-kS-ac9"/>
-                                <exclude reference="alv-UZ-p9t"/>
                                 <exclude reference="VId-eh-0fv"/>
-                                <exclude reference="y7H-wa-dxh"/>
                                 <exclude reference="09p-Y8-Tzq"/>
                             </mask>
                         </variation>
@@ -303,13 +297,20 @@
                                 <include reference="eOk-QF-cl0"/>
                                 <include reference="xGD-5M-8YD"/>
                                 <include reference="WB9-kS-ac9"/>
-                                <include reference="alv-UZ-p9t"/>
                                 <include reference="VId-eh-0fv"/>
-                                <include reference="y7H-wa-dxh"/>
                                 <include reference="09p-Y8-Tzq"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="SubmitAccountChangesButton" destination="Wr3-rJ-Znm" id="5Iz-W7-ejM"/>
+                        <outlet property="changeCompanyField" destination="xGD-5M-8YD" id="dLL-Hn-X0w"/>
+                        <outlet property="changeEmailField" destination="7jc-q2-2qO" id="eDd-GL-LFb"/>
+                        <outlet property="changeFirstnameField" destination="dcf-TM-bru" id="tjv-Ud-uc2"/>
+                        <outlet property="changeLastnameField" destination="eOk-QF-cl0" id="Jct-Ut-ov5"/>
+                        <outlet property="changePasswordField" destination="hwF-rx-bPO" id="F17-ET-P9H"/>
+                        <outlet property="changeUsernameField" destination="09p-Y8-Tzq" id="anr-I9-cAn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnf-sP-UuS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
