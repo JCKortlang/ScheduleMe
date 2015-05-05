@@ -15,8 +15,8 @@
 
 @implementation AccountDetailsViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     // Do any additional setup after loading the view.
     [self navigationItem].title = @"Change Account Details";
     
@@ -39,10 +39,26 @@
 
 //WILL SUBMIT CHANGES TO THE PARSE DICTIONARIES
 - (IBAction)submitChangesClicked:(id)sender {
-    //PFUser *User = [PFUser currentUser];
-    //User.username;
-    //ADD A THING THAT CHECKS TO SEE IF THE PASSWORD IS EMPTY
-    //JUST SET ALL THE VALUES TO THE NEW ENTERED ONES
+    PFUser *User = [PFUser currentUser];
+    NSString *firstname = @"firstname";
+    NSString *lastname = @"lastname";
+    NSString *organization = @"organization";
+    
+    //SUBMITS THE CHANGES TO THE ACCOUNT DETAILS
+    User.username = self.changeUsernameField.text;
+    User.email = self.changeEmailField.text;
+    if (self.changePasswordField.text != nil) {
+        User.password = self.changePasswordField.text;
+    }
+    [User setValue:self.changeFirstnameField.text forKey:firstname];
+    [User setValue:self.changeLastnameField.text forKey:lastname];
+    [User setValue:self.changeCompanyField.text forKey:organization];
+    
+    [User saveEventually];
+    
+    //SUBMIT CHANGES TO PARSE
+    //NEED TO IMPLEMENT
+    
 }
 
 //MINIMIZEs KEYBOARD WHEN BACKGROUND IS TOUCHED

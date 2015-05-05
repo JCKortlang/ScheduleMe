@@ -71,13 +71,13 @@
                             <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HD3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EwS-Es-JNo">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Account Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWd-oP-gGp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Account Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWd-oP-gGp">
                                 <rect key="frame" x="212" y="28" width="176" height="21"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZIK-po-IkP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZIK-po-IkP">
                                 <rect key="frame" x="252" y="122" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9xU-lY-KOK"/>
@@ -98,7 +98,7 @@
                                     <action selector="textFieldReturn:" destination="lTe-O7-Agq" eventType="editingDidEndOnExit" id="Rfp-pp-kAf"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hN-43-NJm">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hN-43-NJm">
                                 <rect key="frame" x="321" y="185" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4sE-Fi-AKg"/>
@@ -119,7 +119,7 @@
                                     <action selector="textFieldReturn:" destination="lTe-O7-Agq" eventType="editingDidEndOnExit" id="ehf-81-D3w"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LmG-NF-PDz">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LmG-NF-PDz">
                                 <rect key="frame" x="182" y="185" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="mTZ-Pd-IyH"/>
@@ -140,7 +140,7 @@
                                     <action selector="textFieldReturn:" destination="lTe-O7-Agq" eventType="editingDidEndOnExit" id="Agc-ok-3w2"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="53X-I8-mYR">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="53X-I8-mYR">
                                 <rect key="frame" x="182" y="242" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dsU-gw-OS1"/>
@@ -161,7 +161,7 @@
                                     <action selector="textFieldReturn:" destination="lTe-O7-Agq" eventType="editingDidEndOnExit" id="Kk6-hl-L8y"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Organization" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-Hh-43t">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Organization" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0xO-Hh-43t">
                                 <rect key="frame" x="321" y="242" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4Ue-IZ-BKL"/>
@@ -206,7 +206,7 @@
                                     <action selector="textFieldReturn:" destination="lTe-O7-Agq" eventType="editingDidEndOnExit" id="h7H-sl-AN4"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pg-pO-I9X">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pg-pO-I9X">
                                 <rect key="frame" x="259" y="306" width="82" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NXa-R7-mRr"/>
@@ -229,7 +229,7 @@
                                     <action selector="UserCreationConfirmed:" destination="lTe-O7-Agq" eventType="touchUpInside" id="5RI-g7-M38"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyQ-qh-IUr">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyQ-qh-IUr">
                                 <rect key="frame" x="204" y="373" width="193" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vsC-Jg-IX4"/>
@@ -299,31 +299,31 @@
                                 <exclude reference="MYh-dM-1QW"/>
                                 <exclude reference="Mun-h9-Klg"/>
                                 <exclude reference="pAQ-46-P9t"/>
-                                <exclude reference="u9m-gL-e9g"/>
-                                <exclude reference="vyx-xB-NRx"/>
                                 <exclude reference="8gN-TT-Jfa"/>
                                 <exclude reference="ekW-bM-Zac"/>
                                 <exclude reference="hWL-sg-GqX"/>
                                 <exclude reference="pRM-oX-7Ub"/>
-                                <exclude reference="Hhn-Qg-qbx"/>
-                                <exclude reference="VZF-FM-TPq"/>
-                                <exclude reference="YQ5-yS-DJm"/>
-                                <exclude reference="WDM-o1-pTz"/>
-                                <exclude reference="m13-hH-5uV"/>
+                                <exclude reference="u9m-gL-e9g"/>
+                                <exclude reference="vyx-xB-NRx"/>
                                 <exclude reference="4tz-4z-SBM"/>
                                 <exclude reference="Ct6-Pe-Zmq"/>
                                 <exclude reference="d4x-1o-e2H"/>
                                 <exclude reference="jTP-oC-Fa4"/>
                                 <exclude reference="k4v-pL-jHt"/>
+                                <exclude reference="Hhn-Qg-qbx"/>
+                                <exclude reference="VZF-FM-TPq"/>
+                                <exclude reference="YQ5-yS-DJm"/>
                                 <exclude reference="ToI-EJ-Y8j"/>
                                 <exclude reference="WAs-Cu-hty"/>
-                                <exclude reference="Z6B-nY-dVE"/>
-                                <exclude reference="jbi-Pa-4zu"/>
-                                <exclude reference="t5q-nf-sMg"/>
+                                <exclude reference="WDM-o1-pTz"/>
+                                <exclude reference="m13-hH-5uV"/>
                                 <exclude reference="PIL-pD-zLN"/>
                                 <exclude reference="YXH-gY-H8e"/>
                                 <exclude reference="mHx-Tf-Za0"/>
                                 <exclude reference="zJv-PE-gXs"/>
+                                <exclude reference="Z6B-nY-dVE"/>
+                                <exclude reference="jbi-Pa-4zu"/>
+                                <exclude reference="t5q-nf-sMg"/>
                                 <exclude reference="5a5-qF-KSL"/>
                                 <exclude reference="1lH-er-UiK"/>
                             </mask>
@@ -339,31 +339,31 @@
                                 <include reference="MYh-dM-1QW"/>
                                 <include reference="Mun-h9-Klg"/>
                                 <include reference="pAQ-46-P9t"/>
-                                <include reference="u9m-gL-e9g"/>
-                                <include reference="vyx-xB-NRx"/>
                                 <include reference="8gN-TT-Jfa"/>
                                 <include reference="ekW-bM-Zac"/>
                                 <include reference="hWL-sg-GqX"/>
                                 <include reference="pRM-oX-7Ub"/>
-                                <include reference="Hhn-Qg-qbx"/>
-                                <include reference="VZF-FM-TPq"/>
-                                <include reference="YQ5-yS-DJm"/>
-                                <include reference="WDM-o1-pTz"/>
-                                <include reference="m13-hH-5uV"/>
+                                <include reference="u9m-gL-e9g"/>
+                                <include reference="vyx-xB-NRx"/>
                                 <include reference="4tz-4z-SBM"/>
                                 <include reference="Ct6-Pe-Zmq"/>
                                 <include reference="d4x-1o-e2H"/>
                                 <include reference="jTP-oC-Fa4"/>
                                 <include reference="k4v-pL-jHt"/>
+                                <include reference="Hhn-Qg-qbx"/>
+                                <include reference="VZF-FM-TPq"/>
+                                <include reference="YQ5-yS-DJm"/>
                                 <include reference="ToI-EJ-Y8j"/>
                                 <include reference="WAs-Cu-hty"/>
-                                <include reference="Z6B-nY-dVE"/>
-                                <include reference="jbi-Pa-4zu"/>
-                                <include reference="t5q-nf-sMg"/>
+                                <include reference="WDM-o1-pTz"/>
+                                <include reference="m13-hH-5uV"/>
                                 <include reference="PIL-pD-zLN"/>
                                 <include reference="YXH-gY-H8e"/>
                                 <include reference="mHx-Tf-Za0"/>
                                 <include reference="zJv-PE-gXs"/>
+                                <include reference="Z6B-nY-dVE"/>
+                                <include reference="jbi-Pa-4zu"/>
+                                <include reference="t5q-nf-sMg"/>
                                 <include reference="5a5-qF-KSL"/>
                                 <include reference="1lH-er-UiK"/>
                             </mask>
@@ -520,14 +520,14 @@
                             <imageView userInteractionEnabled="NO" alpha="0.29999999999999966" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HD3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5Ps-sp-CHl">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ScheduleMe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJ4-QW-Zip">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="ScheduleMe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJ4-QW-Zip">
                                 <rect key="frame" x="186" y="28" width="228" height="21"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.81222098210000004" green="0.4341862749" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l4L-Fw-94L">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l4L-Fw-94L">
                                 <rect key="frame" x="252" y="92" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="DSI-oZ-eRu"/>
@@ -548,7 +548,7 @@
                                     <action selector="textFieldReturn:" destination="5m3-OJ-kb2" eventType="editingDidEndOnExit" id="ILV-Xq-x5A"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MoM-Vr-9RV">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MoM-Vr-9RV">
                                 <rect key="frame" x="252" y="148" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7uI-m4-HMD"/>
@@ -569,7 +569,7 @@
                                     <action selector="textFieldReturn:" destination="5m3-OJ-kb2" eventType="editingDidEndOnExit" id="K84-LB-Cpg"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QA6-vO-eFX">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QA6-vO-eFX">
                                 <rect key="frame" x="268" y="196" width="64" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="pgX-eA-Yog"/>
@@ -591,7 +591,7 @@
                                     <action selector="loginPressed:" destination="5m3-OJ-kb2" eventType="touchUpInside" id="CiM-U0-cdK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq8-68-eY2">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq8-68-eY2">
                                 <rect key="frame" x="228" y="280" width="145" height="30"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
